@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		969BA0481FDA4E1F00222CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0471FDA4E1F00222CE5 /* AppDelegate.swift */; };
+		969BA04A1FDA4E1F00222CE5 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0491FDA4E1F00222CE5 /* art.scnassets */; };
+		969BA04C1FDA4E1F00222CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA04B1FDA4E1F00222CE5 /* ViewController.swift */; };
+		969BA04F1FDA4E1F00222CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969BA04D1FDA4E1F00222CE5 /* Main.storyboard */; };
+		969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0501FDA4E1F00222CE5 /* Assets.xcassets */; };
+		969BA0541FDA4E1F00222CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0521FDA4E1F00222CE5 /* LaunchScreen.storyboard */; };
+		969BA05F1FDA4E1F00222CE5 /* FitPetnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA05E1FDA4E1F00222CE5 /* FitPetnerTests.swift */; };
+		969BA06A1FDA4E1F00222CE5 /* FitPetnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0691FDA4E1F00222CE5 /* FitPetnerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		969BA05B1FDA4E1F00222CE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969BA03C1FDA4E1F00222CE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 969BA0431FDA4E1F00222CE5;
+			remoteInfo = FitPetner;
+		};
+		969BA0661FDA4E1F00222CE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969BA03C1FDA4E1F00222CE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 969BA0431FDA4E1F00222CE5;
+			remoteInfo = FitPetner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		969BA0441FDA4E1F00222CE5 /* FitPetner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPetner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		969BA0471FDA4E1F00222CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		969BA0491FDA4E1F00222CE5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		969BA04B1FDA4E1F00222CE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		969BA04E1FDA4E1F00222CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		969BA0501FDA4E1F00222CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		969BA0531FDA4E1F00222CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		969BA0551FDA4E1F00222CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		969BA05A1FDA4E1F00222CE5 /* FitPetnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitPetnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		969BA05E1FDA4E1F00222CE5 /* FitPetnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPetnerTests.swift; sourceTree = "<group>"; };
+		969BA0601FDA4E1F00222CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		969BA0651FDA4E1F00222CE5 /* FitPetnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitPetnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		969BA0691FDA4E1F00222CE5 /* FitPetnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPetnerUITests.swift; sourceTree = "<group>"; };
+		969BA06B1FDA4E1F00222CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		969BA0411FDA4E1F00222CE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969BA0571FDA4E1F00222CE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969BA0621FDA4E1F00222CE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		969BA03B1FDA4E1E00222CE5 = {
+			isa = PBXGroup;
+			children = (
+				969BA0461FDA4E1F00222CE5 /* FitPetner */,
+				969BA05D1FDA4E1F00222CE5 /* FitPetnerTests */,
+				969BA0681FDA4E1F00222CE5 /* FitPetnerUITests */,
+				969BA0451FDA4E1F00222CE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		969BA0451FDA4E1F00222CE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				969BA0441FDA4E1F00222CE5 /* FitPetner.app */,
+				969BA05A1FDA4E1F00222CE5 /* FitPetnerTests.xctest */,
+				969BA0651FDA4E1F00222CE5 /* FitPetnerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		969BA0461FDA4E1F00222CE5 /* FitPetner */ = {
+			isa = PBXGroup;
+			children = (
+				969BA0471FDA4E1F00222CE5 /* AppDelegate.swift */,
+				969BA0491FDA4E1F00222CE5 /* art.scnassets */,
+				969BA04B1FDA4E1F00222CE5 /* ViewController.swift */,
+				969BA04D1FDA4E1F00222CE5 /* Main.storyboard */,
+				969BA0501FDA4E1F00222CE5 /* Assets.xcassets */,
+				969BA0521FDA4E1F00222CE5 /* LaunchScreen.storyboard */,
+				969BA0551FDA4E1F00222CE5 /* Info.plist */,
+			);
+			path = FitPetner;
+			sourceTree = "<group>";
+		};
+		969BA05D1FDA4E1F00222CE5 /* FitPetnerTests */ = {
+			isa = PBXGroup;
+			children = (
+				969BA05E1FDA4E1F00222CE5 /* FitPetnerTests.swift */,
+				969BA0601FDA4E1F00222CE5 /* Info.plist */,
+			);
+			path = FitPetnerTests;
+			sourceTree = "<group>";
+		};
+		969BA0681FDA4E1F00222CE5 /* FitPetnerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				969BA0691FDA4E1F00222CE5 /* FitPetnerUITests.swift */,
+				969BA06B1FDA4E1F00222CE5 /* Info.plist */,
+			);
+			path = FitPetnerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		969BA0431FDA4E1F00222CE5 /* FitPetner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969BA06E1FDA4E1F00222CE5 /* Build configuration list for PBXNativeTarget "FitPetner" */;
+			buildPhases = (
+				969BA0401FDA4E1F00222CE5 /* Sources */,
+				969BA0411FDA4E1F00222CE5 /* Frameworks */,
+				969BA0421FDA4E1F00222CE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FitPetner;
+			productName = FitPetner;
+			productReference = 969BA0441FDA4E1F00222CE5 /* FitPetner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		969BA0591FDA4E1F00222CE5 /* FitPetnerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969BA0711FDA4E1F00222CE5 /* Build configuration list for PBXNativeTarget "FitPetnerTests" */;
+			buildPhases = (
+				969BA0561FDA4E1F00222CE5 /* Sources */,
+				969BA0571FDA4E1F00222CE5 /* Frameworks */,
+				969BA0581FDA4E1F00222CE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				969BA05C1FDA4E1F00222CE5 /* PBXTargetDependency */,
+			);
+			name = FitPetnerTests;
+			productName = FitPetnerTests;
+			productReference = 969BA05A1FDA4E1F00222CE5 /* FitPetnerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		969BA0641FDA4E1F00222CE5 /* FitPetnerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969BA0741FDA4E1F00222CE5 /* Build configuration list for PBXNativeTarget "FitPetnerUITests" */;
+			buildPhases = (
+				969BA0611FDA4E1F00222CE5 /* Sources */,
+				969BA0621FDA4E1F00222CE5 /* Frameworks */,
+				969BA0631FDA4E1F00222CE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				969BA0671FDA4E1F00222CE5 /* PBXTargetDependency */,
+			);
+			name = FitPetnerUITests;
+			productName = FitPetnerUITests;
+			productReference = 969BA0651FDA4E1F00222CE5 /* FitPetnerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		969BA03C1FDA4E1F00222CE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Ericka Bastias";
+				TargetAttributes = {
+					969BA0431FDA4E1F00222CE5 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					969BA0591FDA4E1F00222CE5 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 969BA0431FDA4E1F00222CE5;
+					};
+					969BA0641FDA4E1F00222CE5 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 969BA0431FDA4E1F00222CE5;
+					};
+				};
+			};
+			buildConfigurationList = 969BA03F1FDA4E1F00222CE5 /* Build configuration list for PBXProject "FitPetner" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 969BA03B1FDA4E1E00222CE5;
+			productRefGroup = 969BA0451FDA4E1F00222CE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				969BA0431FDA4E1F00222CE5 /* FitPetner */,
+				969BA0591FDA4E1F00222CE5 /* FitPetnerTests */,
+				969BA0641FDA4E1F00222CE5 /* FitPetnerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		969BA0421FDA4E1F00222CE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969BA04A1FDA4E1F00222CE5 /* art.scnassets in Resources */,
+				969BA0541FDA4E1F00222CE5 /* LaunchScreen.storyboard in Resources */,
+				969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */,
+				969BA04F1FDA4E1F00222CE5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969BA0581FDA4E1F00222CE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969BA0631FDA4E1F00222CE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		969BA0401FDA4E1F00222CE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969BA04C1FDA4E1F00222CE5 /* ViewController.swift in Sources */,
+				969BA0481FDA4E1F00222CE5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969BA0561FDA4E1F00222CE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969BA05F1FDA4E1F00222CE5 /* FitPetnerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969BA0611FDA4E1F00222CE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969BA06A1FDA4E1F00222CE5 /* FitPetnerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		969BA05C1FDA4E1F00222CE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 969BA0431FDA4E1F00222CE5 /* FitPetner */;
+			targetProxy = 969BA05B1FDA4E1F00222CE5 /* PBXContainerItemProxy */;
+		};
+		969BA0671FDA4E1F00222CE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 969BA0431FDA4E1F00222CE5 /* FitPetner */;
+			targetProxy = 969BA0661FDA4E1F00222CE5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		969BA04D1FDA4E1F00222CE5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				969BA04E1FDA4E1F00222CE5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		969BA0521FDA4E1F00222CE5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				969BA0531FDA4E1F00222CE5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		969BA06C1FDA4E1F00222CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		969BA06D1FDA4E1F00222CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		969BA06F1FDA4E1F00222CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73SM4A2654;
+				INFOPLIST_FILE = FitPetner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = holis.FitPetner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		969BA0701FDA4E1F00222CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73SM4A2654;
+				INFOPLIST_FILE = FitPetner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = holis.FitPetner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		969BA0721FDA4E1F00222CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73SM4A2654;
+				INFOPLIST_FILE = FitPetnerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = holis.FitPetnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitPetner.app/FitPetner";
+			};
+			name = Debug;
+		};
+		969BA0731FDA4E1F00222CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73SM4A2654;
+				INFOPLIST_FILE = FitPetnerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = holis.FitPetnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitPetner.app/FitPetner";
+			};
+			name = Release;
+		};
+		969BA0751FDA4E1F00222CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73SM4A2654;
+				INFOPLIST_FILE = FitPetnerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = holis.FitPetnerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FitPetner;
+			};
+			name = Debug;
+		};
+		969BA0761FDA4E1F00222CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73SM4A2654;
+				INFOPLIST_FILE = FitPetnerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = holis.FitPetnerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FitPetner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		969BA03F1FDA4E1F00222CE5 /* Build configuration list for PBXProject "FitPetner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969BA06C1FDA4E1F00222CE5 /* Debug */,
+				969BA06D1FDA4E1F00222CE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		969BA06E1FDA4E1F00222CE5 /* Build configuration list for PBXNativeTarget "FitPetner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969BA06F1FDA4E1F00222CE5 /* Debug */,
+				969BA0701FDA4E1F00222CE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		969BA0711FDA4E1F00222CE5 /* Build configuration list for PBXNativeTarget "FitPetnerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969BA0721FDA4E1F00222CE5 /* Debug */,
+				969BA0731FDA4E1F00222CE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		969BA0741FDA4E1F00222CE5 /* Build configuration list for PBXNativeTarget "FitPetnerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969BA0751FDA4E1F00222CE5 /* Debug */,
+				969BA0761FDA4E1F00222CE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 969BA03C1FDA4E1F00222CE5 /* Project object */;
+}
