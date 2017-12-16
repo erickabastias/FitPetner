@@ -2,7 +2,7 @@ import Foundation
 import SceneKit
 import ARKit
 
-struct itemGenerator {
+struct itemGenerator {    
     // Load 3D models that will appear in game
     static func loadFood() -> SCNNode{
         // var itemArray : [SCNNode] = [] // Choose not to store items in an array
@@ -36,8 +36,12 @@ struct itemGenerator {
         
         let physicsBody = SCNPhysicsBody(
             type: .kinematic,
-            shape: SCNPhysicsShape(geometry: SCNSphere(radius: 0.1))
+            shape: SCNPhysicsShape(geometry: (SCNSphere(radius: 0.1)))
         )
+        physicsBody.mass = 1.25
+        physicsBody.restitution = 0.75
+        physicsBody.friction = 0.75
+        physicsBody.categoryBitMask = CollisionTypes.shape.rawValue
         itemLoaded.physicsBody = physicsBody
         
         return itemLoaded
@@ -82,4 +86,3 @@ struct itemGenerator {
         return bokeh
     }
 }
-

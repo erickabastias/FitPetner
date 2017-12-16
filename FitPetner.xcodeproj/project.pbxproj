@@ -33,7 +33,7 @@
 		969BA09B1FE29D6800222CE5 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA09A1FE29D6800222CE5 /* Popup.swift */; };
 		969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */; };
 		969BA0B31FE2AB2C00222CE5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0B21FE2AB2C00222CE5 /* Character.swift */; };
-		A7098CA41FE56273003E5AB5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7098CA31FE56273003E5AB5 /* Item.swift */; };
+		A7C1512A1FE55775009CBE69 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C151291FE55774009CBE69 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +91,7 @@
 		969BA0A61FE2A53D00222CE5 /* max.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = max.scn; sourceTree = "<group>"; };
 		969BA0B11FE2A66F00222CE5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		969BA0B21FE2AB2C00222CE5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		A7098CA31FE56273003E5AB5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A7C151291FE55774009CBE69 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +143,7 @@
 		969BA0461FDA4E1F00222CE5 /* FitPetner */ = {
 			isa = PBXGroup;
 			children = (
+				A79794891FE5681800B020C4 /* New Group */,
 				969BA0B41FE2AF2800222CE5 /* code */,
 				969BA0B11FE2A66F00222CE5 /* art.scnassets */,
 				969BA0501FDA4E1F00222CE5 /* Assets.xcassets */,
@@ -190,8 +191,8 @@
 				969BA07B1FDEEE8500222CE5 /* ChangeNameViewController.swift */,
 				969BA0791FDEEE5700222CE5 /* StatsViewController.swift */,
 				969BA0771FDEEE3200222CE5 /* GameViewController.swift */,
-				A7098CA31FE56273003E5AB5 /* Item.swift */,
 				969BA0B21FE2AB2C00222CE5 /* Character.swift */,
+				A7C151291FE55774009CBE69 /* Item.swift */,
 				969BA09A1FE29D6800222CE5 /* Popup.swift */,
 				969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */,
 			);
@@ -217,6 +218,13 @@
 				969BA0841FDEF34400222CE5 /* name.png */,
 			);
 			path = "UI images";
+			sourceTree = "<group>";
+		};
+		A79794891FE5681800B020C4 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969BA09B1FE29D6800222CE5 /* Popup.swift in Sources */,
-				A7098CA41FE56273003E5AB5 /* Item.swift in Sources */,
+				A7C1512A1FE55775009CBE69 /* Item.swift in Sources */,
 				969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */,
 				969BA07D1FDEF1A800222CE5 /* ViewController.swift in Sources */,
 				969BA0781FDEEE3200222CE5 /* GameViewController.swift in Sources */,
@@ -541,10 +549,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73SM4A2654;
+				DEVELOPMENT_TEAM = CVQYMLPDBN;
 				INFOPLIST_FILE = FitPetner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ericka1596;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenialin.fitpetner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -556,10 +564,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73SM4A2654;
+				DEVELOPMENT_TEAM = CVQYMLPDBN;
 				INFOPLIST_FILE = FitPetner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ericka1596;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenialin.fitpetner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
