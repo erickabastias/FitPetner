@@ -33,6 +33,7 @@
 		969BA09B1FE29D6800222CE5 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA09A1FE29D6800222CE5 /* Popup.swift */; };
 		969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */; };
 		969BA0B31FE2AB2C00222CE5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0B21FE2AB2C00222CE5 /* Character.swift */; };
+		A7098CA41FE56273003E5AB5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7098CA31FE56273003E5AB5 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		969BA0A61FE2A53D00222CE5 /* max.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = max.scn; sourceTree = "<group>"; };
 		969BA0B11FE2A66F00222CE5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		969BA0B21FE2AB2C00222CE5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		A7098CA31FE56273003E5AB5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				969BA07B1FDEEE8500222CE5 /* ChangeNameViewController.swift */,
 				969BA0791FDEEE5700222CE5 /* StatsViewController.swift */,
 				969BA0771FDEEE3200222CE5 /* GameViewController.swift */,
+				A7098CA31FE56273003E5AB5 /* Item.swift */,
 				969BA0B21FE2AB2C00222CE5 /* Character.swift */,
 				969BA09A1FE29D6800222CE5 /* Popup.swift */,
 				969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */,
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969BA09B1FE29D6800222CE5 /* Popup.swift in Sources */,
+				A7098CA41FE56273003E5AB5 /* Item.swift in Sources */,
 				969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */,
 				969BA07D1FDEF1A800222CE5 /* ViewController.swift in Sources */,
 				969BA0781FDEEE3200222CE5 /* GameViewController.swift in Sources */,
