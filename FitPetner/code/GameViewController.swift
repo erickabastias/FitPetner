@@ -27,7 +27,6 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     @IBOutlet weak var dogbtn: UIButton!
     @IBOutlet weak var homebtn: UIButton!
     @IBOutlet var scnView: ARSCNView!
-    var fox: SCNNode!
     let pedometer: CMPedometer = CMPedometer() // An object for fetching the system-generated live walking data.
     
     // Interface-related elements
@@ -40,6 +39,9 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     var coinsCounter: Int = 0
     var ingredientsCollectedCounter: Int = 0
     var globalTimer: GlobalTimer!
+    
+    // Global boolean to determine user state
+    var isExercise: Bool = true
     
     // Step-counter
     var stepCounterStartDate: Date?
@@ -109,6 +111,10 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             title = "Raw Meat"
             description = "Actually, be careful with raw meat =_="
         }
+        else if foodNode.name == "FOOD_cookie"{
+            title = "Cookie"
+            description = "Eat adequate amount of cookies!"
+        }
         
         Popup(parent: self, title: title, content: description, okActionTitle: "Keep Exercising").show()
     }
@@ -157,12 +163,15 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         }, whenFinished: {
             self.timerLabel.backgroundColor = UIColor(red: 0.94, green: 0.33, blue: 0.31, alpha: 1)
             self.timerLabel.textColor = UIColor.white
+            self.isExercise = false;
+            // Trophy appears
+            self.trophyAppear()
             
-            if CMPedometer.isStepCountingAvailable() {
-                self.pedometer.queryPedometerData(from: self.stepCounterStartDate!, to: Date(), withHandler: { data, error in
-                    print("Nb of steps: " + String(describing: data?.numberOfSteps) + ";" + "Distance: " + String(describing: data?.distance))
-                })
-            }
+//            if CMPedometer.isStepCountingAvailable() {
+//                self.pedometer.queryPedometerData(from: self.stepCounterStartDate!, to: Date(), withHandler: { data, error in
+//                    print("Nb of steps: " + String(describing: data?.numberOfSteps) + ";" + "Distance: " + String(describing: data?.distance))
+//                })
+//            }
         })
     }
     
@@ -255,8 +264,8 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         scnView.scene.rootNode.addChildNode(itemToAppear)
         
         // Particle effect
-        let bokehEmitter = itemGenerator.createBokeh()
-        itemToAppear.addParticleSystem(bokehEmitter)
+        let particleEmitter = itemGenerator.createBokeh()
+        itemToAppear.addParticleSystem(particleEmitter)
     }
     
     func coinAppear(){
@@ -264,6 +273,16 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         coinToAppear = itemGenerator.loadCoin()
         //scnView.pointOfView?.addChildNode(coinToAppear)
         scnView.scene.rootNode.addChildNode(coinToAppear)
+    }
+    
+    func trophyAppear(){
+        var itemToAppear: SCNNode!
+        itemToAppear = itemGenerator.loadTrophy()
+        scnView.scene.rootNode.addChildNode(itemToAppear)
+        
+        // Particle effect
+        let particleEmitter = itemGenerator.createConfetti()
+        itemToAppear.addParticleSystem(particleEmitter)
     }
     
     // Handle Tap on coin and food
@@ -279,28 +298,45 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             // get its node
             let resultNode = result.node
             
-            if (resultNode.name)?.range(of:"FOOD") != nil {
-                // Make it disappear
-                resultNode.removeFromParentNode()
-                
-                // We display the ingredient's information
-                self.printFoodInfo(resultNode)
-                
-                // We now update our progress
-                self.ingredientsCollectedCounter += 1
-                self.updateProgress()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-                    self.foodAppear()
-                })
-            } else if resultNode.name == "COIN" {
-                resultNode.removeFromParentNode()
-                
-                self.rewardCoin()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
-                    self.coinAppear()
-                })
+            // Food/coins only appear while user is exercising
+            if (self.isExercise){
+                if (resultNode.name)?.range(of:"FOOD") != nil {
+                    // Make it disappear
+                    resultNode.removeFromParentNode()
+                    
+                    // We display the ingredient's information
+                    self.printFoodInfo(resultNode)
+                    
+                    // We now update our progress
+                    self.ingredientsCollectedCounter += 1
+                    self.updateProgress()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                        self.foodAppear()
+                    })
+                } else if resultNode.name == "COIN" {
+                    resultNode.removeFromParentNode()
+                    
+                    self.rewardCoin()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+                        self.coinAppear()
+                    })
+                }
+            }
+            else{
+                if (resultNode.name)?.range(of:"FOOD") != nil {
+                    // Make it disappear
+                    resultNode.removeFromParentNode()
+                    // We display the ingredient's information
+                    self.printFoodInfo(resultNode)
+                    // We now update our progress
+                    self.ingredientsCollectedCounter += 1
+                    self.updateProgress()
+                } else if resultNode.name == "COIN" {
+                    resultNode.removeFromParentNode()
+                    self.rewardCoin()
+                }
             }
         }
     }

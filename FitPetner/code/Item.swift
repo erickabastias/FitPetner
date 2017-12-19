@@ -39,7 +39,7 @@ struct itemGenerator {
             itemLoaded.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
         }
         
-        itemLoaded.position = SCNVector3(x:0, y:-3, z:-10)
+        itemLoaded.position = SCNVector3(x:1, y:-3, z:-10)
         
         let physicsBody = SCNPhysicsBody(
             type: .kinematic,
@@ -88,6 +88,28 @@ struct itemGenerator {
         return itemLoaded
     }
     
+    // Load trophy that appears when time's up
+    static func loadTrophy() -> SCNNode{
+        var itemLoaded: SCNNode!
+        
+        let scene = SCNScene( named: "/art.scnassets/trophy.dae")!
+        itemLoaded = scene.rootNode.childNode(withName: "trophy", recursively: true)
+        itemLoaded.scale = SCNVector3(x:0.3, y:0.3, z:0.3)
+        itemLoaded.position = SCNVector3(x:0, y:-2, z:-10)
+        itemLoaded.name = "TROPHY"
+        let newMaterial = SCNMaterial()
+        newMaterial.diffuse.contents = UIColor.yellow
+        itemLoaded.geometry?.firstMaterial = newMaterial
+        
+        let physicsBody = SCNPhysicsBody(
+            type: .kinematic,
+            shape: SCNPhysicsShape(geometry: SCNSphere(radius: 0.1))
+        )
+        itemLoaded.physicsBody = physicsBody
+        
+        return itemLoaded
+    }
+    
     // Load Coins that will appear in game
     static func loadCoin() -> SCNNode{
         // Randomly choose a type of coin to appear
@@ -125,6 +147,13 @@ struct itemGenerator {
         bokeh.particleColor = UIColor.white
         bokeh.emitterShape = SCNGeometry()
         return bokeh
+    }
+    
+    // Particle effect for trophy
+    static func createConfetti() -> SCNParticleSystem {
+        let confetti = SCNParticleSystem(named: "/art.scnassets/Particles/confetti.scnp", inDirectory: nil)!
+        //confetti.emitterShape = SCNGeometry()
+        return confetti
     }
 }
 
