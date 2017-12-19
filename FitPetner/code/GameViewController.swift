@@ -63,7 +63,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tap.numberOfTouchesRequired = 1
         self.scnView.addGestureRecognizer(tap)
-        
+
         foodAppear()
         coinAppear()
         
@@ -247,6 +247,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    // Let food appear, depending on time
     func foodAppear(){
         var itemToAppear: SCNNode!
         itemToAppear = itemGenerator.loadFood()

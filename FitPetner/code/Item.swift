@@ -2,14 +2,15 @@ import Foundation
 import SceneKit
 import ARKit
 
-struct itemGenerator {    
+struct itemGenerator {
     // Load 3D models that will appear in game
     static func loadFood() -> SCNNode{
         // var itemArray : [SCNNode] = [] // Choose not to store items in an array
         
         // Randomly choose item to appear
-        let numberOfItem = Int(3) // 新增物品時記得改這邊的數字
+        let numberOfItem = Int(4) // 新增物品時記得改這邊的數字
         let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
+        //let randomNumber = 4
         var itemLoaded: SCNNode!
         
         if (randomNumber == 1) {
@@ -30,6 +31,12 @@ struct itemGenerator {
             itemLoaded = scene.rootNode.childNode(withName: "Raw_meat", recursively: true)
             itemLoaded.name = "FOOD_rawmeat"
             itemLoaded.scale = SCNVector3(x: 0.25, y: 0.25, z: 0.25)
+        } else if (randomNumber == 4) {
+            // Load model
+            let scene = SCNScene( named: "/art.scnassets/cookie.dae")!
+            itemLoaded = scene.rootNode.childNode(withName: "cookie", recursively: true)
+            itemLoaded.name = "FOOD_cookie"
+            itemLoaded.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
         }
         
         itemLoaded.position = SCNVector3(x:0, y:-3, z:-10)
@@ -42,6 +49,40 @@ struct itemGenerator {
         physicsBody.restitution = 0.75
         physicsBody.friction = 0.75
         physicsBody.categoryBitMask = CollisionTypes.shape.rawValue
+        itemLoaded.physicsBody = physicsBody
+        
+        return itemLoaded
+    }
+    
+    // Load objects (toys, etc.)
+    static func loadObj() -> SCNNode{
+        // var itemArray : [SCNNode] = [] // Choose not to store items in an array
+        
+        // Randomly choose item to appear
+        let numberOfItem = Int(3) // 新增物品時記得改這邊的數字
+        let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
+        var itemLoaded: SCNNode!
+        
+        if (randomNumber == 1) {
+            // Load model
+            let scene = SCNScene( named: "/art.scnassets/apple.dae")!
+            itemLoaded = scene.rootNode.childNode(withName: "apple", recursively: true)
+            itemLoaded.name = "FOOD_apple"
+            itemLoaded.scale = SCNVector3(x:0.02, y:0.02, z:0.02)
+        } else if (randomNumber == 2) {
+            // Load model
+            let scene = SCNScene( named: "/art.scnassets/boletus.dae")!
+            itemLoaded = scene.rootNode.childNode(withName: "boletus", recursively: true)
+            itemLoaded.name = "FOOD_boletus"
+            itemLoaded.scale = SCNVector3(x:0.02, y:0.02, z:0.02)
+        }
+        
+        itemLoaded.position = SCNVector3(x:0, y:-3, z:-10)
+        
+        let physicsBody = SCNPhysicsBody(
+            type: .kinematic,
+            shape: SCNPhysicsShape(geometry: (SCNSphere(radius: 0.1)))
+        )
         itemLoaded.physicsBody = physicsBody
         
         return itemLoaded
@@ -86,3 +127,4 @@ struct itemGenerator {
         return bokeh
     }
 }
+
