@@ -33,6 +33,8 @@
 		969BA09B1FE29D6800222CE5 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA09A1FE29D6800222CE5 /* Popup.swift */; };
 		969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */; };
 		969BA0B31FE2AB2C00222CE5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0B21FE2AB2C00222CE5 /* Character.swift */; };
+		A73C374B1FE367D60097FF70 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A73C374A1FE367D60097FF70 /* art.scnassets */; };
+		A74578C41FE8F0A200748660 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74578C31FE8F0A200748660 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,11 +87,10 @@
 		969BA0991FE0D0B200222CE5 /* app_icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon 2.png"; sourceTree = "<group>"; };
 		969BA09A1FE29D6800222CE5 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTimer.swift; sourceTree = "<group>"; };
-		969BA0A41FE2A47500222CE5 /* bokeh.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = bokeh.scnp; sourceTree = "<group>"; };
-		969BA0A51FE2A47500222CE5 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
 		969BA0A61FE2A53D00222CE5 /* max.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = max.scn; sourceTree = "<group>"; };
-		969BA0B11FE2A66F00222CE5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		969BA0B21FE2AB2C00222CE5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		A73C374A1FE367D60097FF70 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		A74578C31FE8F0A200748660 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				969BA0461FDA4E1F00222CE5 /* FitPetner */,
-				969BA0A31FE2A47500222CE5 /* Particles */,
 				969BA05D1FDA4E1F00222CE5 /* FitPetnerTests */,
 				969BA0681FDA4E1F00222CE5 /* FitPetnerUITests */,
 				969BA0451FDA4E1F00222CE5 /* Products */,
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				969BA0B41FE2AF2800222CE5 /* code */,
-				969BA0B11FE2A66F00222CE5 /* art.scnassets */,
+				A73C374A1FE367D60097FF70 /* art.scnassets */,
 				969BA0501FDA4E1F00222CE5 /* Assets.xcassets */,
 				969BA04D1FDA4E1F00222CE5 /* Main.storyboard */,
 				969BA0521FDA4E1F00222CE5 /* LaunchScreen.storyboard */,
@@ -171,15 +171,6 @@
 			path = FitPetnerUITests;
 			sourceTree = "<group>";
 		};
-		969BA0A31FE2A47500222CE5 /* Particles */ = {
-			isa = PBXGroup;
-			children = (
-				969BA0A41FE2A47500222CE5 /* bokeh.scnp */,
-				969BA0A51FE2A47500222CE5 /* bokeh.png */,
-			);
-			path = Particles;
-			sourceTree = "<group>";
-		};
 		969BA0B41FE2AF2800222CE5 /* code */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +179,7 @@
 				969BA07B1FDEEE8500222CE5 /* ChangeNameViewController.swift */,
 				969BA0791FDEEE5700222CE5 /* StatsViewController.swift */,
 				969BA0771FDEEE3200222CE5 /* GameViewController.swift */,
+				A74578C31FE8F0A200748660 /* Item.swift */,
 				969BA0B21FE2AB2C00222CE5 /* Character.swift */,
 				969BA09A1FE29D6800222CE5 /* Popup.swift */,
 				969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */,
@@ -334,6 +326,7 @@
 				969BA0951FDEF45F00222CE5 /* corgi1600.png in Resources */,
 				969BA0971FDEF46500222CE5 /* setting_icon.png in Resources */,
 				969BA0941FDEF45C00222CE5 /* pencil.png in Resources */,
+				A73C374B1FE367D60097FF70 /* art.scnassets in Resources */,
 				969BA08E1FDEF44900222CE5 /* Coin.png in Resources */,
 				969BA08F1FDEF44C00222CE5 /* dog-bone-hi.png in Resources */,
 				969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */,
@@ -364,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969BA09B1FE29D6800222CE5 /* Popup.swift in Sources */,
+				A74578C41FE8F0A200748660 /* Item.swift in Sources */,
 				969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */,
 				969BA07D1FDEF1A800222CE5 /* ViewController.swift in Sources */,
 				969BA0781FDEEE3200222CE5 /* GameViewController.swift in Sources */,
@@ -537,10 +531,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73SM4A2654;
+				DEVELOPMENT_TEAM = CVQYMLPDBN;
 				INFOPLIST_FILE = FitPetner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ericka1596;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenialin.fitpetner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,10 +546,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73SM4A2654;
+				DEVELOPMENT_TEAM = CVQYMLPDBN;
 				INFOPLIST_FILE = FitPetner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ericka1596;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenialin.fitpetner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

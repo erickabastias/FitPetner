@@ -27,7 +27,6 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     @IBOutlet weak var dogbtn: UIButton!
     @IBOutlet weak var homebtn: UIButton!
     @IBOutlet var scnView: ARSCNView!
-    var fox: SCNNode!
     let pedometer: CMPedometer = CMPedometer() // An object for fetching the system-generated live walking data.
     
     // Interface-related elements
@@ -40,6 +39,9 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     var coinsCounter: Int = 0
     var ingredientsCollectedCounter: Int = 0
     var globalTimer: GlobalTimer!
+    
+    // Global boolean to determine user state
+    var isExercise: Bool = true
     
     // Step-counter
     var stepCounterStartDate: Date?
@@ -64,7 +66,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         tap.numberOfTouchesRequired = 1
         self.scnView.addGestureRecognizer(tap)
 
-        itemAppear()
+        foodAppear()
         coinAppear()
         
         showUI()
@@ -108,6 +110,10 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         else if foodNode.name == "FOOD_rawmeat"{
             title = "Raw Meat"
             description = "Actually, be careful with raw meat =_="
+        }
+        else if foodNode.name == "FOOD_cookie"{
+            title = "Cookie"
+            description = "Eat adequate amount of cookies!"
         }
         
         Popup(parent: self, title: title, content: description, okActionTitle: "Keep Exercising").show()
@@ -157,12 +163,15 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         }, whenFinished: {
             self.timerLabel.backgroundColor = UIColor(red: 0.94, green: 0.33, blue: 0.31, alpha: 1)
             self.timerLabel.textColor = UIColor.white
+            self.isExercise = false;
+            // Trophy appears
+            self.trophyAppear()
             
-            if CMPedometer.isStepCountingAvailable() {
-                self.pedometer.queryPedometerData(from: self.stepCounterStartDate!, to: Date(), withHandler: { data, error in
-                    print("Nb of steps: " + String(describing: data?.numberOfSteps) + ";" + "Distance: " + String(describing: data?.distance))
-                })
-            }
+//            if CMPedometer.isStepCountingAvailable() {
+//                self.pedometer.queryPedometerData(from: self.stepCounterStartDate!, to: Date(), withHandler: { data, error in
+//                    print("Nb of steps: " + String(describing: data?.numberOfSteps) + ";" + "Distance: " + String(describing: data?.distance))
+//                })
+//            }
         })
     }
     
@@ -248,108 +257,32 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     }
     
     // Let food appear, depending on time
-    func itemAppear(){
+    func foodAppear(){
         var itemToAppear: SCNNode!
-        itemToAppear = loadItem()
-        scnView.pointOfView?.addChildNode(itemToAppear)
+        itemToAppear = itemGenerator.loadFood()
+        //scnView.pointOfView?.addChildNode(itemToAppear)
+        scnView.scene.rootNode.addChildNode(itemToAppear)
         
         // Particle effect
-        let bokehEmitter = createBokeh()
-        itemToAppear.addParticleSystem(bokehEmitter)
-        
-        /*
-         // 用 physics 做動畫，有重力問題
-        itemToAppear.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
-        
-        let force = SCNVector3(x: 0, y: 5 , z: 0)
-        let position = SCNVector3(x: 0.05, y: 0.05, z: 0.05)
-        itemToAppear.physicsBody?.applyForce(force, at: position, asImpulse: true)
- */
-    }
-    
-    // Load 3D models that will appear in game
-    func loadItem() -> SCNNode{
-        // var itemArray : [SCNNode] = [] // Choose not to store items in an array
-        
-        // Randomly choose item to appear
-        let numberOfItem = Int(3) // 新增物品時記得改這邊的數字
-        let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
-        var itemLoaded: SCNNode!
-        
-        if (randomNumber == 1) {
-            // Load model
-            let scene = SCNScene( named: "art.scnassets/apple.dae")!
-            itemLoaded = scene.rootNode.childNode(withName: "apple", recursively: true)
-            itemLoaded.name = "FOOD_apple"
-            itemLoaded.scale = SCNVector3(x:0.02, y:0.02, z:0.02)
-        } else if (randomNumber == 2) {
-            // Load model
-            let scene = SCNScene( named: "art.scnassets/boletus.dae")!
-            itemLoaded = scene.rootNode.childNode(withName: "boletus", recursively: true)
-            itemLoaded.name = "FOOD_boletus"
-            itemLoaded.scale = SCNVector3(x:0.02, y:0.02, z:0.02)
-        } else if (randomNumber == 3) {
-            // Load model
-            let scene = SCNScene( named: "art.scnassets/raw_meat.dae")!
-            itemLoaded = scene.rootNode.childNode(withName: "Raw_meat", recursively: true)
-            itemLoaded.name = "FOOD_rawmeat"
-            itemLoaded.scale = SCNVector3(x: 0.25, y: 0.25, z: 0.25)
-        }
-        
-        itemLoaded.position = SCNVector3(x:0, y:-3, z:-10)
-        
-        let physicsBody = SCNPhysicsBody(
-            type: .kinematic,
-            shape: SCNPhysicsShape(geometry: SCNSphere(radius: 0.1))
-        )
-        itemLoaded.physicsBody = physicsBody
-        
-        return itemLoaded
+        let particleEmitter = itemGenerator.createBokeh()
+        itemToAppear.addParticleSystem(particleEmitter)
     }
     
     func coinAppear(){
         var coinToAppear: SCNNode!
-        coinToAppear = loadCoin()
-        scnView.pointOfView?.addChildNode(coinToAppear)
+        coinToAppear = itemGenerator.loadCoin()
+        //scnView.pointOfView?.addChildNode(coinToAppear)
+        scnView.scene.rootNode.addChildNode(coinToAppear)
     }
     
-    // Load Coins that will appear in game
-    func loadCoin() -> SCNNode{
-        // Randomly choose a type of coin to appear
-        let numberOfCoin = Int(2) // 新增物品時記得改這邊的數字
-        let randomNumber = Int(arc4random_uniform(UInt32(numberOfCoin))+1)
-        var coinLoaded: SCNNode!
+    func trophyAppear(){
+        var itemToAppear: SCNNode!
+        itemToAppear = itemGenerator.loadTrophy()
+        scnView.scene.rootNode.addChildNode(itemToAppear)
         
-        if (randomNumber == 1) {
-            // Load model
-            let scene = SCNScene( named: "art.scnassets/coin.dae")!
-            coinLoaded = scene.rootNode.childNode(withName: "coin", recursively: true)
-            coinLoaded.scale = SCNVector3(x:4, y:4, z:4)
-        } else if (randomNumber == 2) {
-            // Load model
-            let scene = SCNScene( named: "art.scnassets/coin2.dae")!
-            coinLoaded = scene.rootNode.childNode(withName: "coin2", recursively: true)
-            coinLoaded.scale = SCNVector3(x:50, y:50, z:50)
-        }
-        
-        coinLoaded.position = SCNVector3(x:-1, y:0, z:-10)
-        coinLoaded.name = "COIN"
-        
-        let physicsBody = SCNPhysicsBody(
-            type: .kinematic,
-            shape: SCNPhysicsShape(geometry: SCNSphere(radius: 0.1))
-        )
-        coinLoaded.physicsBody = physicsBody
-        
-        return coinLoaded
-    }
-    
-    // Particle effect for items appearing
-    func createBokeh() -> SCNParticleSystem {
-        let bokeh = SCNParticleSystem(named: "bokeh.scnp", inDirectory: nil)!
-        bokeh.particleColor = UIColor.white
-        bokeh.emitterShape = SCNGeometry()
-        return bokeh
+        // Particle effect
+        let particleEmitter = itemGenerator.createConfetti()
+        itemToAppear.addParticleSystem(particleEmitter)
     }
     
     // Handle Tap on coin and food
@@ -365,28 +298,45 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             // get its node
             let resultNode = result.node
             
-            if (resultNode.name)?.range(of:"FOOD") != nil {
-                // Make it disappear
-                resultNode.removeFromParentNode()
-                
-                // We display the ingredient's information
-                self.printFoodInfo(resultNode)
-                
-                // We now update our progress
-                self.ingredientsCollectedCounter += 1
-                self.updateProgress()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-                    self.itemAppear()
-                })
-            } else if resultNode.name == "COIN" {
-                resultNode.removeFromParentNode()
-                
-                self.rewardCoin()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
-                    self.coinAppear()
-                })
+            // Food/coins only appear while user is exercising
+            if (self.isExercise){
+                if (resultNode.name)?.range(of:"FOOD") != nil {
+                    // Make it disappear
+                    resultNode.removeFromParentNode()
+                    
+                    // We display the ingredient's information
+                    self.printFoodInfo(resultNode)
+                    
+                    // We now update our progress
+                    self.ingredientsCollectedCounter += 1
+                    self.updateProgress()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                        self.foodAppear()
+                    })
+                } else if resultNode.name == "COIN" {
+                    resultNode.removeFromParentNode()
+                    
+                    self.rewardCoin()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+                        self.coinAppear()
+                    })
+                }
+            }
+            else{
+                if (resultNode.name)?.range(of:"FOOD") != nil {
+                    // Make it disappear
+                    resultNode.removeFromParentNode()
+                    // We display the ingredient's information
+                    self.printFoodInfo(resultNode)
+                    // We now update our progress
+                    self.ingredientsCollectedCounter += 1
+                    self.updateProgress()
+                } else if resultNode.name == "COIN" {
+                    resultNode.removeFromParentNode()
+                    self.rewardCoin()
+                }
             }
         }
     }
