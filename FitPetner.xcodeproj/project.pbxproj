@@ -89,6 +89,14 @@
 		969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTimer.swift; sourceTree = "<group>"; };
 		969BA0A61FE2A53D00222CE5 /* max.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = max.scn; sourceTree = "<group>"; };
 		969BA0B21FE2AB2C00222CE5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		969BA0B61FECF50B00222CE5 /* barkSoundOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barkSoundOpen.png; sourceTree = "<group>"; };
+		969BA0B71FECF52100222CE5 /* backHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backHome.png; sourceTree = "<group>"; };
+		969BA0B81FECF53E00222CE5 /* fitpetnerLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitpetnerLogo.png; sourceTree = "<group>"; };
+		969BA0B91FECF54F00222CE5 /* mainscreenBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainscreenBar.png; sourceTree = "<group>"; };
+		969BA0BA1FECF55E00222CE5 /* mainscreenLogoBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainscreenLogoBtn.png; sourceTree = "<group>"; };
+		969BA0BB1FECF56F00222CE5 /* puppy01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy01.png; sourceTree = "<group>"; };
+		969BA0BE1FECFD9E00222CE5 /* bgOrangeFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgOrangeFloor.png; sourceTree = "<group>"; };
+		969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personalSportBtn.png; sourceTree = "<group>"; };
 		A73C374A1FE367D60097FF70 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		A74578C31FE8F0A200748660 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +198,14 @@
 		969BA0B51FE2AF5100222CE5 /* UI images */ = {
 			isa = PBXGroup;
 			children = (
+				969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */,
+				969BA0BE1FECFD9E00222CE5 /* bgOrangeFloor.png */,
+				969BA0BB1FECF56F00222CE5 /* puppy01.png */,
+				969BA0B91FECF54F00222CE5 /* mainscreenBar.png */,
+				969BA0BA1FECF55E00222CE5 /* mainscreenLogoBtn.png */,
+				969BA0B81FECF53E00222CE5 /* fitpetnerLogo.png */,
+				969BA0B71FECF52100222CE5 /* backHome.png */,
+				969BA0B61FECF50B00222CE5 /* barkSoundOpen.png */,
 				969BA0861FDEF34F00222CE5 /* paw.png */,
 				969BA0881FDEF35000222CE5 /* pencil.png */,
 				969BA08A1FDEF35A00222CE5 /* corgi1600.png */,

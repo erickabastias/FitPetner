@@ -22,63 +22,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paw.png" translatesAutoresizingMaskIntoConstraints="NO" id="crg-qv-O4d">
-                                <rect key="frame" x="184" y="643" width="22" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgOrangeFloor.png" translatesAutoresizingMaskIntoConstraints="NO" id="h8Z-aI-mQS">
+                                <rect key="frame" x="0.0" y="348" width="375" height="319"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paw.png" translatesAutoresizingMaskIntoConstraints="NO" id="OXc-yR-5Rw">
-                                <rect key="frame" x="165" y="631" width="20" height="16"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainscreenBar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-iD-8d6">
+                                <rect key="frame" x="67" y="-12" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paw.png" translatesAutoresizingMaskIntoConstraints="NO" id="FiY-sT-NAx">
-                                <rect key="frame" x="157" y="651" width="13" height="13"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainscreenLogoBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="dXm-Yg-huq">
+                                <rect key="frame" x="144" y="14" width="90" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paw.png" translatesAutoresizingMaskIntoConstraints="NO" id="NGd-eM-g00">
-                                <rect key="frame" x="140" y="646" width="13" height="13"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fitpetnerLogo.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-cB-Dnt">
+                                <rect key="frame" x="76" y="84" width="227" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paw.png" translatesAutoresizingMaskIntoConstraints="NO" id="eCQ-3W-6Kk">
-                                <rect key="frame" x="133" y="661" width="13" height="13"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="personalSportBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="kTM-qs-LuR">
+                                <rect key="frame" x="67" y="395" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paw.png" translatesAutoresizingMaskIntoConstraints="NO" id="aSa-bb-cZD">
-                                <rect key="frame" x="233" y="635" width="26" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paw.png" translatesAutoresizingMaskIntoConstraints="NO" id="0LI-Fk-iyy">
-                                <rect key="frame" x="207" y="620" width="23" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="corgi1600.png" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-Ce-JJM">
-                                <rect key="frame" x="259" y="546" width="108" height="121"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="name.png" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-cB-Dnt">
-                                <rect key="frame" x="24" y="39" width="343" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owz-2h-f9k">
-                                <rect key="frame" x="76" y="215" width="223" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98823529481887817" green="0.45490196347236633" blue="0.015686275437474251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="37"/>
-                                <color key="tintColor" red="0.91053003072738647" green="0.78127306699752808" blue="0.42463594675064087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="START!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="JtW-KF-AGL" kind="show" id="rbL-AS-QrX"/>
-                                </connections>
-                            </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heL-bp-KEw">
-                                <rect key="frame" x="76" y="329" width="223" height="74"/>
+                                <rect key="frame" x="32" y="29" width="40" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98823529480000005" green="0.45490196350000001" blue="0.015686275440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="37"/>
                                 <color key="tintColor" red="0.91053003072738647" green="0.78127306699752808" blue="0.42463594675064087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="PET STATS">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -86,17 +55,27 @@
                                     <segue destination="I6n-cN-oGO" kind="show" id="QX9-Nx-2oC"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIo-bt-QVl">
-                                <rect key="frame" x="76" y="448" width="223" height="74"/>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owz-2h-f9k">
+                                <rect key="frame" x="76" y="422" width="223" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98823529480000005" green="0.45490196350000001" blue="0.015686275440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="37"/>
                                 <color key="tintColor" red="0.91053003072738647" green="0.78127306699752808" blue="0.42463594675064087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="CAMERA">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="JtW-KF-AGL" kind="show" id="rbL-AS-QrX"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puppy01.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yz9-50-uex">
+                                <rect key="frame" x="59" y="212" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="barkSoundOpen.png" translatesAutoresizingMaskIntoConstraints="NO" id="wr4-tG-srO">
+                                <rect key="frame" x="272" y="559" width="87" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="IWy-sK-C2t"/>
@@ -105,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="176"/>
+            <point key="canvasLocation" x="28" y="175.86206896551727"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="fUw-UL-pcv">
@@ -387,18 +366,24 @@
     <resources>
         <image name="Coin.png" width="216" height="216"/>
         <image name="arrow.png" width="296" height="138"/>
+        <image name="barkSoundOpen.png" width="88" height="88"/>
+        <image name="bgOrangeFloor.png" width="414" height="327"/>
         <image name="corgi1600.png" width="1600" height="1600"/>
         <image name="dog-bone-hi.png" width="600" height="290"/>
         <image name="dog_icon.png" width="512" height="512"/>
+        <image name="fitpetnerLogo.png" width="100" height="19"/>
         <image name="home_icon.png" width="256" height="256"/>
-        <image name="name.png" width="626" height="173"/>
+        <image name="mainscreenBar.png" width="289" height="10"/>
+        <image name="mainscreenLogoBtn.png" width="51" height="51"/>
         <image name="orange paw.png" width="528" height="595"/>
         <image name="paw.png" width="597" height="558"/>
         <image name="pencil.png" width="512" height="512"/>
+        <image name="personalSportBtn.png" width="260" height="77"/>
+        <image name="puppy01.png" width="221" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xFF-T2-5FC"/>
-        <segue reference="dZL-Dt-RlA"/>
+        <segue reference="rbL-AS-QrX"/>
+        <segue reference="QX9-Nx-2oC"/>
         <segue reference="Cvl-e0-U68"/>
     </inferredMetricsTieBreakers>
 </document>
