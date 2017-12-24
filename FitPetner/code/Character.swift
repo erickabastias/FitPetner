@@ -34,7 +34,7 @@ struct NodeGenerator {
     }
     
     static func generateCubeInFrontOf(node: SCNNode, physics: Bool) -> SCNNode {
-        let tempScene = SCNScene(named: "art.scnassets/Dog/Dog.dae")!
+        let tempScene = SCNScene(named: "art.scnassets/character/max.scn")!
         let dogNode: SCNNode = tempScene.rootNode.clone()
         
         
@@ -53,14 +53,16 @@ struct NodeGenerator {
         dogNode.rotation = node.rotation
         
         if physics {
-            let physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: (dogNode.childNode(withName: "DogBody", recursively: true)?.geometry!)!, options: nil))
+            let physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: (dogNode.childNode(withName: "Max", recursively: true)?.geometry!)!, options: nil))
             physicsBody.mass = 1.25
             physicsBody.restitution = 0.75
             physicsBody.friction = 0.75
+            physicsBody.angularVelocityFactor = SCNVector3(0.0, 0.0, 0.0)
             physicsBody.categoryBitMask = CollisionTypes.shape.rawValue
             dogNode.physicsBody = physicsBody
         }
-        dogNode.name = "DogNode"
+        
+        dogNode.name = "FoxNode"
         return dogNode
     }
     
