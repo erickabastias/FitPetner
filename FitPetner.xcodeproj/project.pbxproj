@@ -35,6 +35,16 @@
 		969BA0B31FE2AB2C00222CE5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0B21FE2AB2C00222CE5 /* Character.swift */; };
 		A73C374B1FE367D60097FF70 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A73C374A1FE367D60097FF70 /* art.scnassets */; };
 		A74578C41FE8F0A200748660 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74578C31FE8F0A200748660 /* Item.swift */; };
+		A79D3EE01FEFA9630077C621 /* CharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79D3EDF1FEFA9630077C621 /* CharacterController.swift */; };
+		A79D3EE11FEFA9A30077C621 /* personalSportBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */; };
+		A79D3EE21FEFA9A50077C621 /* bgOrangeFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0BE1FECFD9E00222CE5 /* bgOrangeFloor.png */; };
+		A79D3EE31FEFA9A80077C621 /* puppy01.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0BB1FECF56F00222CE5 /* puppy01.png */; };
+		A79D3EE41FEFA9AB0077C621 /* mainscreenBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0B91FECF54F00222CE5 /* mainscreenBar.png */; };
+		A79D3EE51FEFA9AD0077C621 /* mainscreenLogoBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0BA1FECF55E00222CE5 /* mainscreenLogoBtn.png */; };
+		A79D3EE61FEFA9B50077C621 /* fitpetnerLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0B81FECF53E00222CE5 /* fitpetnerLogo.png */; };
+		A79D3EE71FEFA9C00077C621 /* backHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0B71FECF52100222CE5 /* backHome.png */; };
+		A79D3EE81FEFA9C20077C621 /* barkSoundOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0B61FECF50B00222CE5 /* barkSoundOpen.png */; };
+		A79D3EE91FEFA9CA0077C621 /* app_icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0991FE0D0B200222CE5 /* app_icon 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +109,7 @@
 		969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personalSportBtn.png; sourceTree = "<group>"; };
 		A73C374A1FE367D60097FF70 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		A74578C31FE8F0A200748660 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A79D3EDF1FEFA9630077C621 /* CharacterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +193,7 @@
 		969BA0B41FE2AF2800222CE5 /* code */ = {
 			isa = PBXGroup;
 			children = (
+				A79D3EDF1FEFA9630077C621 /* CharacterController.swift */,
 				969BA0471FDA4E1F00222CE5 /* AppDelegate.swift */,
 				969BA04B1FDA4E1F00222CE5 /* ViewController.swift */,
 				969BA07B1FDEEE8500222CE5 /* ChangeNameViewController.swift */,
@@ -332,10 +344,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				969BA0911FDEF45100222CE5 /* name.png in Resources */,
+				A79D3EE71FEFA9C00077C621 /* backHome.png in Resources */,
 				969BA08C1FDEF44300222CE5 /* app_icon.png in Resources */,
 				969BA0961FDEF46200222CE5 /* dog_icon.png in Resources */,
 				969BA0981FDEF46800222CE5 /* unodos.jpg in Resources */,
 				969BA0541FDA4E1F00222CE5 /* LaunchScreen.storyboard in Resources */,
+				A79D3EE11FEFA9A30077C621 /* personalSportBtn.png in Resources */,
+				A79D3EE51FEFA9AD0077C621 /* mainscreenLogoBtn.png in Resources */,
 				969BA0901FDEF44F00222CE5 /* home_icon.png in Resources */,
 				969BA08B1FDEF44000222CE5 /* orange paw.png in Resources */,
 				969BA0921FDEF45500222CE5 /* paw.png in Resources */,
@@ -345,8 +360,14 @@
 				A73C374B1FE367D60097FF70 /* art.scnassets in Resources */,
 				969BA08E1FDEF44900222CE5 /* Coin.png in Resources */,
 				969BA08F1FDEF44C00222CE5 /* dog-bone-hi.png in Resources */,
+				A79D3EE41FEFA9AB0077C621 /* mainscreenBar.png in Resources */,
 				969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */,
 				969BA08D1FDEF44600222CE5 /* arrow.png in Resources */,
+				A79D3EE91FEFA9CA0077C621 /* app_icon 2.png in Resources */,
+				A79D3EE31FEFA9A80077C621 /* puppy01.png in Resources */,
+				A79D3EE81FEFA9C20077C621 /* barkSoundOpen.png in Resources */,
+				A79D3EE21FEFA9A50077C621 /* bgOrangeFloor.png in Resources */,
+				A79D3EE61FEFA9B50077C621 /* fitpetnerLogo.png in Resources */,
 				969BA04F1FDA4E1F00222CE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +396,7 @@
 				969BA09B1FE29D6800222CE5 /* Popup.swift in Sources */,
 				A74578C41FE8F0A200748660 /* Item.swift in Sources */,
 				969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */,
+				A79D3EE01FEFA9630077C621 /* CharacterController.swift in Sources */,
 				969BA07D1FDEF1A800222CE5 /* ViewController.swift in Sources */,
 				969BA0781FDEEE3200222CE5 /* GameViewController.swift in Sources */,
 				969BA07C1FDEEE8500222CE5 /* ChangeNameViewController.swift in Sources */,
@@ -547,10 +569,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CVQYMLPDBN;
+				DEVELOPMENT_TEAM = 4CBC9K8AKU;
 				INFOPLIST_FILE = FitPetner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xenialin.fitpetner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FitPetner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -562,10 +584,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CVQYMLPDBN;
+				DEVELOPMENT_TEAM = 4CBC9K8AKU;
 				INFOPLIST_FILE = FitPetner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xenialin.fitpetner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FitPetner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

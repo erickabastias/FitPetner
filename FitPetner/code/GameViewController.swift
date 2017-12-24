@@ -46,6 +46,9 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     // Step-counter
     var stepCounterStartDate: Date?
     
+    // Character
+    var characterController: Character?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +63,8 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         let camera = scnView.pointOfView
         let pet = NodeGenerator.generateCubeInFrontOf(node: camera!, physics: true)
         scnView.scene.rootNode.addChildNode(pet)
+        characterController = Character(model: pet)
+        characterController?.loadAnimations()
         
         // add a tap gesture recognizer
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -322,6 +327,15 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
                         self.coinAppear()
                     })
+                } else if resultNode.name == "FoxNode" || resultNode.name == "Max" {
+                    print("TAP FOXNODE")
+                    let location: CGPoint = gestureRecognize.location(in: scnView)
+                    let hits = self.scnView.hitTest(location, options: nil)
+                    
+                    if let tappedNode = hits.first?.node {
+                        print(tappedNode.name ?? "N/A")
+                        tappedNode.parent?.parent?.physicsBody?.applyForce(SCNVector3(0, 5, 0), asImpulse: true)
+                    }
                 }
             }
             else{
@@ -358,14 +372,14 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     }
     
     private func configureWorldBottom() {
-        let bottomPlane = SCNBox(width: 10000, height: 0.5, length: 10000, chamferRadius: 0)
+        let bottomPlane = SCNBox(width: 100000, height: 0.5, length: 100000, chamferRadius: 0)
         
         let material = SCNMaterial()
         material.diffuse.contents = UIColor(white: 1.0, alpha: 0.0)
         bottomPlane.materials = [material]
         
         let bottomNode = SCNNode(geometry: bottomPlane)
-        bottomNode.position = SCNVector3(x: 0, y: -5, z: 0)
+        bottomNode.position = SCNVector3(x: 0, y: -2, z: 0)
         
         let physicsBody = SCNPhysicsBody.static()
         physicsBody.categoryBitMask = CollisionTypes.bottom.rawValue
