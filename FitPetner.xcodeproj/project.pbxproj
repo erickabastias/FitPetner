@@ -102,6 +102,8 @@
 		969BA0CF1FF0EAA300222CE5 /* bonecookieBoneBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonecookieBoneBtn.png; sourceTree = "<group>"; };
 		969BA0D01FF0F4C100222CE5 /* feedingBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedingBox.png; sourceTree = "<group>"; };
 		969BA0D11FF1065900222CE5 /* check-mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark@2x.png"; sourceTree = "<group>"; };
+		969BA0D21FF1201F00222CE5 /* barkSoundClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barkSoundClose.png; sourceTree = "<group>"; };
+		969BA0D31FF1203100222CE5 /* scoreImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreImage.png; sourceTree = "<group>"; };
 		A73C374A1FE367D60097FF70 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		A74578C31FE8F0A200748660 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A79D3EDF1FEFA9630077C621 /* CharacterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,8 @@
 		969BA0C01FF0DD4700222CE5 /* design students */ = {
 			isa = PBXGroup;
 			children = (
+				969BA0D21FF1201F00222CE5 /* barkSoundClose.png */,
+				969BA0D31FF1203100222CE5 /* scoreImage.png */,
 				969BA0C41FF0DEB400222CE5 /* group3.png */,
 				969BA0CA1FF0DFC100222CE5 /* dogfood.png */,
 				969BA0CB1FF0DFDE00222CE5 /* drinkingBtn.png */,

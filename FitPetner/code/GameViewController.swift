@@ -22,18 +22,18 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     @IBOutlet weak var score_lbl: UILabel!
     @IBOutlet weak var timer_lbl: UILabel!
     @IBOutlet weak var coins_lbl: UILabel!
-    @IBOutlet weak var announcement_lbl: UILabel!
     @IBOutlet weak var coin_img: UIImageView!
     @IBOutlet weak var dogbtn: UIButton!
     @IBOutlet weak var homebtn: UIButton!
     @IBOutlet var scnView: ARSCNView!
     @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
     
     let pedometer: CMPedometer = CMPedometer() // An object for fetching the system-generated live walking data.
     
     // Interface-related elements
     //var coinsLabel: UILabel!
-    var levelLabel: UILabel!
+    //var levelLabel: UILabel!
     var progressBar: UIProgressView!
     var timerLabel: UILabel!
     
@@ -153,27 +153,16 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         // Then normalize it to 1
         currentProgress = currentProgress / Float(EACH_LEVEL_EXP)
         
-        self.levelLabel.text = "Level " + String(level)
+        self.levelLabel.text = String(level)
         self.progressBar.setProgress(Float(currentProgress), animated: true)
     }
     
-    //send level to Stats screen
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //******************************************************
-        let exp = self.ingredientsCollectedCounter * 100
-        let EACH_LEVEL_EXP = 500
-        let level = exp / EACH_LEVEL_EXP
-        //******************************************************
-        // Get the new view controller using segue.destinationViewController.
-        let destination = segue.destination as! StatsViewController
-        destination.leveltext = String(level)
-        // Pass the selected object to the new view controller.
-    }
+
     
     // Update both coins counter and UI
     func setCoins(_ coins: Int = 0) {
         self.coinsCounter += 1
-        self.coins_lbl.text = String(coins) + " coins"
+        self.coins_lbl.text = String(coins)
     }
     
     // Initialize timer
@@ -210,13 +199,14 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         container.layer.cornerRadius = 5
         container.layer.masksToBounds = true
         
+        /*
         // Level label
         self.levelLabel = UILabel(frame: self.getFrameFor(parent: container.bounds, padding: 5))
         self.levelLabel.text = "Level 0"
         self.levelLabel.textColor = UIColor.white
         self.levelLabel.textAlignment = NSTextAlignment.center
         self.levelLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        container.contentView.addSubview(self.levelLabel)
+        container.contentView.addSubview(self.levelLabel)*/
         
         // Coins View
         let coinsView = UIView(frame: self.getFrameFor(parent: container.bounds, width: 60, padding: 5))
@@ -405,6 +395,22 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         self.scnView.scene.rootNode.addChildNode(bottomNode)
         self.scnView.scene.physicsWorld.contactDelegate = self
     }
+    
+    //send data to stats screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //******************************************************
+        let exp = self.ingredientsCollectedCounter * 100
+        let EACH_LEVEL_EXP = 500
+        let level = exp / EACH_LEVEL_EXP
+        //******************************************************
+        // Get the new view controller using segue.destinationViewController.
+        let destination = segue.destination as! StatsViewController
+        destination.level = level
+        destination.coins = Int(coins_lbl.text!)!
+        destination.points = exp
+        // Pass the selected object to the new view controller.
+    }
+    
 }
 
 // Close AR Plane Detection for now
