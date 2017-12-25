@@ -27,10 +27,12 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     @IBOutlet weak var dogbtn: UIButton!
     @IBOutlet weak var homebtn: UIButton!
     @IBOutlet var scnView: ARSCNView!
+    @IBOutlet weak var pointsLabel: UILabel!
+    
     let pedometer: CMPedometer = CMPedometer() // An object for fetching the system-generated live walking data.
     
     // Interface-related elements
-    var coinsLabel: UILabel!
+    //var coinsLabel: UILabel!
     var levelLabel: UILabel!
     var progressBar: UIProgressView!
     var timerLabel: UILabel!
@@ -39,6 +41,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     var coinsCounter: Int = 0
     var ingredientsCollectedCounter: Int = 0
     var globalTimer: GlobalTimer!
+    var timer_duration = 30
     
     // Global boolean to determine user state
     var isExercise: Bool = true
@@ -138,15 +141,15 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         
         // Temporary: each ingredient would be worth 100pts
         // No bonus involved in there
+        //******************************************************
         let exp = self.ingredientsCollectedCounter * 100
-        
         // One level every 500 experience points
         let EACH_LEVEL_EXP = 500
         let level = exp / EACH_LEVEL_EXP
-        
+        //******************************************************
         // Retrieve the current progress
         var currentProgress: Float = Float(exp - level * EACH_LEVEL_EXP)
-        
+        pointsLabel.text = String(exp)
         // Then normalize it to 1
         currentProgress = currentProgress / Float(EACH_LEVEL_EXP)
         
@@ -154,15 +157,28 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         self.progressBar.setProgress(Float(currentProgress), animated: true)
     }
     
+    //send level to Stats screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //******************************************************
+        let exp = self.ingredientsCollectedCounter * 100
+        let EACH_LEVEL_EXP = 500
+        let level = exp / EACH_LEVEL_EXP
+        //******************************************************
+        // Get the new view controller using segue.destinationViewController.
+        let destination = segue.destination as! StatsViewController
+        destination.leveltext = String(level)
+        // Pass the selected object to the new view controller.
+    }
+    
     // Update both coins counter and UI
     func setCoins(_ coins: Int = 0) {
         self.coinsCounter += 1
-        self.coinsLabel.text = String(coins) + " coins"
+        self.coins_lbl.text = String(coins) + " coins"
     }
     
     // Initialize timer
     func startTimer() {
-        self.globalTimer = GlobalTimer(duration: 30, onTick: {
+        self.globalTimer = GlobalTimer(duration: timer_duration, onTick: {
             let timerStatus = self.globalTimer.getCurrentStatus()
             self.timerLabel.text = timerStatus
         }, whenFinished: {
@@ -199,7 +215,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         self.levelLabel.text = "Level 0"
         self.levelLabel.textColor = UIColor.white
         self.levelLabel.textAlignment = NSTextAlignment.center
-        self.levelLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        self.levelLabel.font = UIFont.boldSystemFont(ofSize: 30)
         container.contentView.addSubview(self.levelLabel)
         
         // Coins View
@@ -209,11 +225,11 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         container.contentView.addSubview(coinsView)
         
         // Coins label
-        self.coinsLabel = UILabel(frame: self.getFrameFor(parent: coinsView.bounds))
-        self.coinsLabel.text = "0 coins"
-        self.coinsLabel.textAlignment = NSTextAlignment.center
-        self.coinsLabel.font = UIFont.boldSystemFont(ofSize: 7)
-        coinsView.addSubview(self.coinsLabel)
+        //self.coinsLabel = UILabel(frame: self.getFrameFor(parent: coinsView.bounds))
+        //self.coinsLabel.text = "0 coins"
+        //self.coinsLabel.textAlignment = NSTextAlignment.center
+        //self.coinsLabel.font = UIFont.boldSystemFont(ofSize: 7)
+        //coinsView.addSubview(self.coinsLabel)
         
         // Progress bar (leveling)
         self.progressBar = UIProgressView(frame: self.getFrameFor(parent: container.bounds, y: 23))

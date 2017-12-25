@@ -17,19 +17,8 @@
 		969BA07A1FDEEE5700222CE5 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0791FDEEE5700222CE5 /* StatsViewController.swift */; };
 		969BA07C1FDEEE8500222CE5 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA07B1FDEEE8500222CE5 /* ChangeNameViewController.swift */; };
 		969BA07D1FDEF1A800222CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA04B1FDA4E1F00222CE5 /* ViewController.swift */; };
-		969BA08B1FDEF44000222CE5 /* orange paw.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA07E1FDEF32E00222CE5 /* orange paw.png */; };
 		969BA08C1FDEF44300222CE5 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA07F1FDEF34300222CE5 /* app_icon.png */; };
-		969BA08D1FDEF44600222CE5 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0801FDEF34300222CE5 /* arrow.png */; };
-		969BA08E1FDEF44900222CE5 /* Coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0821FDEF34400222CE5 /* Coin.png */; };
-		969BA08F1FDEF44C00222CE5 /* dog-bone-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0811FDEF34300222CE5 /* dog-bone-hi.png */; };
-		969BA0901FDEF44F00222CE5 /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0831FDEF34400222CE5 /* home_icon.png */; };
 		969BA0911FDEF45100222CE5 /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0841FDEF34400222CE5 /* name.png */; };
-		969BA0921FDEF45500222CE5 /* paw.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0861FDEF34F00222CE5 /* paw.png */; };
-		969BA0941FDEF45C00222CE5 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0881FDEF35000222CE5 /* pencil.png */; };
-		969BA0951FDEF45F00222CE5 /* corgi1600.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA08A1FDEF35A00222CE5 /* corgi1600.png */; };
-		969BA0961FDEF46200222CE5 /* dog_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0891FDEF35A00222CE5 /* dog_icon.png */; };
-		969BA0971FDEF46500222CE5 /* setting_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0851FDEF34F00222CE5 /* setting_icon.png */; };
-		969BA0981FDEF46800222CE5 /* unodos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0871FDEF35000222CE5 /* unodos.jpg */; };
 		969BA09B1FE29D6800222CE5 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA09A1FE29D6800222CE5 /* Popup.swift */; };
 		969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */; };
 		969BA0B31FE2AB2C00222CE5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0B21FE2AB2C00222CE5 /* Character.swift */; };
@@ -81,19 +70,8 @@
 		969BA0771FDEEE3200222CE5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		969BA0791FDEEE5700222CE5 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		969BA07B1FDEEE8500222CE5 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
-		969BA07E1FDEF32E00222CE5 /* orange paw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange paw.png"; sourceTree = "<group>"; };
 		969BA07F1FDEF34300222CE5 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
-		969BA0801FDEF34300222CE5 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
-		969BA0811FDEF34300222CE5 /* dog-bone-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dog-bone-hi.png"; sourceTree = "<group>"; };
-		969BA0821FDEF34400222CE5 /* Coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coin.png; sourceTree = "<group>"; };
-		969BA0831FDEF34400222CE5 /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		969BA0841FDEF34400222CE5 /* name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = name.png; sourceTree = "<group>"; };
-		969BA0851FDEF34F00222CE5 /* setting_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_icon.png; sourceTree = "<group>"; };
-		969BA0861FDEF34F00222CE5 /* paw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paw.png; sourceTree = "<group>"; };
-		969BA0871FDEF35000222CE5 /* unodos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unodos.jpg; sourceTree = "<group>"; };
-		969BA0881FDEF35000222CE5 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
-		969BA0891FDEF35A00222CE5 /* dog_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog_icon.png; sourceTree = "<group>"; };
-		969BA08A1FDEF35A00222CE5 /* corgi1600.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corgi1600.png; sourceTree = "<group>"; };
 		969BA0991FE0D0B200222CE5 /* app_icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon 2.png"; sourceTree = "<group>"; };
 		969BA09A1FE29D6800222CE5 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		969BA09C1FE29D7700222CE5 /* GlobalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTimer.swift; sourceTree = "<group>"; };
@@ -107,6 +85,23 @@
 		969BA0BB1FECF56F00222CE5 /* puppy01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy01.png; sourceTree = "<group>"; };
 		969BA0BE1FECFD9E00222CE5 /* bgOrangeFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgOrangeFloor.png; sourceTree = "<group>"; };
 		969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personalSportBtn.png; sourceTree = "<group>"; };
+		969BA0C11FF0DDF700222CE5 /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
+		969BA0C21FF0DE6500222CE5 /* trophyBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophyBtn.png; sourceTree = "<group>"; };
+		969BA0C31FF0DE8200222CE5 /* stopJoggingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopJoggingImage.png; sourceTree = "<group>"; };
+		969BA0C41FF0DEB400222CE5 /* group3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group3.png; sourceTree = "<group>"; };
+		969BA0C51FF0DEF500222CE5 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
+		969BA0C61FF0DF1300222CE5 /* cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cake.png; sourceTree = "<group>"; };
+		969BA0C71FF0DF2E00222CE5 /* coinsImage02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coinsImage02.png; sourceTree = "<group>"; };
+		969BA0C81FF0DF4B00222CE5 /* dogbone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dogbone.png; sourceTree = "<group>"; };
+		969BA0C91FF0DF6C00222CE5 /* dogboneCookie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dogboneCookie.png; sourceTree = "<group>"; };
+		969BA0CA1FF0DFC100222CE5 /* dogfood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dogfood.png; sourceTree = "<group>"; };
+		969BA0CB1FF0DFDE00222CE5 /* drinkingBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drinkingBtn.png; sourceTree = "<group>"; };
+		969BA0CC1FF0DFF900222CE5 /* duckdoll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duckdoll.png; sourceTree = "<group>"; };
+		969BA0CD1FF0E01000222CE5 /* energyImge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = energyImge.png; sourceTree = "<group>"; };
+		969BA0CE1FF0E08A00222CE5 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		969BA0CF1FF0EAA300222CE5 /* bonecookieBoneBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonecookieBoneBtn.png; sourceTree = "<group>"; };
+		969BA0D01FF0F4C100222CE5 /* feedingBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedingBox.png; sourceTree = "<group>"; };
+		969BA0D11FF1065900222CE5 /* check-mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-mark@2x.png"; sourceTree = "<group>"; };
 		A73C374A1FE367D60097FF70 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		A74578C31FE8F0A200748660 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A79D3EDF1FEFA9630077C621 /* CharacterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterController.swift; sourceTree = "<group>"; };
@@ -210,30 +205,44 @@
 		969BA0B51FE2AF5100222CE5 /* UI images */ = {
 			isa = PBXGroup;
 			children = (
-				969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */,
+				969BA0C01FF0DD4700222CE5 /* design students */,
+				969BA0CE1FF0E08A00222CE5 /* settings.png */,
+				969BA0D11FF1065900222CE5 /* check-mark@2x.png */,
+			);
+			path = "UI images";
+			sourceTree = "<group>";
+		};
+		969BA0C01FF0DD4700222CE5 /* design students */ = {
+			isa = PBXGroup;
+			children = (
+				969BA0C41FF0DEB400222CE5 /* group3.png */,
+				969BA0CA1FF0DFC100222CE5 /* dogfood.png */,
+				969BA0CB1FF0DFDE00222CE5 /* drinkingBtn.png */,
+				969BA0CC1FF0DFF900222CE5 /* duckdoll.png */,
+				969BA0C61FF0DF1300222CE5 /* cake.png */,
+				969BA0CD1FF0E01000222CE5 /* energyImge.png */,
+				969BA0C91FF0DF6C00222CE5 /* dogboneCookie.png */,
+				969BA0C81FF0DF4B00222CE5 /* dogbone.png */,
+				969BA0CF1FF0EAA300222CE5 /* bonecookieBoneBtn.png */,
+				969BA0C71FF0DF2E00222CE5 /* coinsImage02.png */,
+				969BA0C51FF0DEF500222CE5 /* apple.png */,
+				969BA0D01FF0F4C100222CE5 /* feedingBox.png */,
+				969BA0C21FF0DE6500222CE5 /* trophyBtn.png */,
+				969BA07F1FDEF34300222CE5 /* app_icon.png */,
 				969BA0BE1FECFD9E00222CE5 /* bgOrangeFloor.png */,
+				969BA0C31FF0DE8200222CE5 /* stopJoggingImage.png */,
+				969BA0C11FF0DDF700222CE5 /* football.png */,
+				969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */,
 				969BA0BB1FECF56F00222CE5 /* puppy01.png */,
 				969BA0B91FECF54F00222CE5 /* mainscreenBar.png */,
 				969BA0BA1FECF55E00222CE5 /* mainscreenLogoBtn.png */,
 				969BA0B81FECF53E00222CE5 /* fitpetnerLogo.png */,
 				969BA0B71FECF52100222CE5 /* backHome.png */,
 				969BA0B61FECF50B00222CE5 /* barkSoundOpen.png */,
-				969BA0861FDEF34F00222CE5 /* paw.png */,
-				969BA0881FDEF35000222CE5 /* pencil.png */,
-				969BA08A1FDEF35A00222CE5 /* corgi1600.png */,
-				969BA0891FDEF35A00222CE5 /* dog_icon.png */,
-				969BA0991FE0D0B200222CE5 /* app_icon 2.png */,
-				969BA0851FDEF34F00222CE5 /* setting_icon.png */,
-				969BA0871FDEF35000222CE5 /* unodos.jpg */,
-				969BA07E1FDEF32E00222CE5 /* orange paw.png */,
-				969BA07F1FDEF34300222CE5 /* app_icon.png */,
-				969BA0801FDEF34300222CE5 /* arrow.png */,
-				969BA0821FDEF34400222CE5 /* Coin.png */,
-				969BA0811FDEF34300222CE5 /* dog-bone-hi.png */,
-				969BA0831FDEF34400222CE5 /* home_icon.png */,
 				969BA0841FDEF34400222CE5 /* name.png */,
+				969BA0991FE0D0B200222CE5 /* app_icon 2.png */,
 			);
-			path = "UI images";
+			path = "design students";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,23 +355,12 @@
 				969BA0911FDEF45100222CE5 /* name.png in Resources */,
 				A79D3EE71FEFA9C00077C621 /* backHome.png in Resources */,
 				969BA08C1FDEF44300222CE5 /* app_icon.png in Resources */,
-				969BA0961FDEF46200222CE5 /* dog_icon.png in Resources */,
-				969BA0981FDEF46800222CE5 /* unodos.jpg in Resources */,
 				969BA0541FDA4E1F00222CE5 /* LaunchScreen.storyboard in Resources */,
 				A79D3EE11FEFA9A30077C621 /* personalSportBtn.png in Resources */,
 				A79D3EE51FEFA9AD0077C621 /* mainscreenLogoBtn.png in Resources */,
-				969BA0901FDEF44F00222CE5 /* home_icon.png in Resources */,
-				969BA08B1FDEF44000222CE5 /* orange paw.png in Resources */,
-				969BA0921FDEF45500222CE5 /* paw.png in Resources */,
-				969BA0951FDEF45F00222CE5 /* corgi1600.png in Resources */,
-				969BA0971FDEF46500222CE5 /* setting_icon.png in Resources */,
-				969BA0941FDEF45C00222CE5 /* pencil.png in Resources */,
 				A73C374B1FE367D60097FF70 /* art.scnassets in Resources */,
-				969BA08E1FDEF44900222CE5 /* Coin.png in Resources */,
-				969BA08F1FDEF44C00222CE5 /* dog-bone-hi.png in Resources */,
 				A79D3EE41FEFA9AB0077C621 /* mainscreenBar.png in Resources */,
 				969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */,
-				969BA08D1FDEF44600222CE5 /* arrow.png in Resources */,
 				A79D3EE91FEFA9CA0077C621 /* app_icon 2.png in Resources */,
 				A79D3EE31FEFA9A80077C621 /* puppy01.png in Resources */,
 				A79D3EE81FEFA9C20077C621 /* barkSoundOpen.png in Resources */,
