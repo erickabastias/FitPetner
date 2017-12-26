@@ -13,13 +13,24 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var coinslbl: UILabel!
     @IBOutlet weak var pointslbl: UILabel!
     @IBOutlet weak var namelbl: UILabel!
+    @IBOutlet weak var level_lbl: UILabel!
     
     
     var firstVCtext = "NAME"
+    var level = 0
+    var coins = 0
+    var points = 0
+    var savedcoins = 0
+    var savedlevel = 0
+    var savedpoints = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         namelbl.text = firstVCtext
+        level_lbl.text = String(savedlevel+level)
+        pointslbl.text = String(savedpoints + points)
+        coinslbl.text = String(savedcoins+coins)
+        savevalues()
         // Do any additional setup after loading the view.
     }
 
@@ -28,6 +39,11 @@ class StatsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func savevalues(){
+        savedlevel = savedlevel+level
+        savedpoints = savedpoints + points
+        savedcoins = savedcoins + coins
+    }
 
     /*
     // MARK: - Navigation

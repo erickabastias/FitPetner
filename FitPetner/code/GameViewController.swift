@@ -22,16 +22,18 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     @IBOutlet weak var score_lbl: UILabel!
     @IBOutlet weak var timer_lbl: UILabel!
     @IBOutlet weak var coins_lbl: UILabel!
-    @IBOutlet weak var announcement_lbl: UILabel!
     @IBOutlet weak var coin_img: UIImageView!
     @IBOutlet weak var dogbtn: UIButton!
     @IBOutlet weak var homebtn: UIButton!
     @IBOutlet var scnView: ARSCNView!
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    
     let pedometer: CMPedometer = CMPedometer() // An object for fetching the system-generated live walking data.
     
     // Interface-related elements
-    var coinsLabel: UILabel!
-    var levelLabel: UILabel!
+    //var coinsLabel: UILabel!
+    //var levelLabel: UILabel!
     var progressBar: UIProgressView!
     var timerLabel: UILabel!
     
@@ -39,12 +41,16 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     var coinsCounter: Int = 0
     var ingredientsCollectedCounter: Int = 0
     var globalTimer: GlobalTimer!
+    var timer_duration = 30
     
     // Global boolean to determine user state
     var isExercise: Bool = true
     
     // Step-counter
     var stepCounterStartDate: Date?
+    
+    // Character
+    var characterController: Character?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +66,8 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         let camera = scnView.pointOfView
         let pet = NodeGenerator.generateCubeInFrontOf(node: camera!, physics: true)
         scnView.scene.rootNode.addChildNode(pet)
+        characterController = Character(model: pet)
+        characterController?.loadAnimations()
         
         // add a tap gesture recognizer
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -133,31 +141,33 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         
         // Temporary: each ingredient would be worth 100pts
         // No bonus involved in there
+        //******************************************************
         let exp = self.ingredientsCollectedCounter * 100
-        
         // One level every 500 experience points
         let EACH_LEVEL_EXP = 500
         let level = exp / EACH_LEVEL_EXP
-        
+        //******************************************************
         // Retrieve the current progress
         var currentProgress: Float = Float(exp - level * EACH_LEVEL_EXP)
-        
+        pointsLabel.text = String(exp)
         // Then normalize it to 1
         currentProgress = currentProgress / Float(EACH_LEVEL_EXP)
         
-        self.levelLabel.text = "Level " + String(level)
+        self.levelLabel.text = String(level)
         self.progressBar.setProgress(Float(currentProgress), animated: true)
     }
+    
+
     
     // Update both coins counter and UI
     func setCoins(_ coins: Int = 0) {
         self.coinsCounter += 1
-        self.coinsLabel.text = String(coins) + " coins"
+        self.coins_lbl.text = String(coins)
     }
     
     // Initialize timer
     func startTimer() {
-        self.globalTimer = GlobalTimer(duration: 30, onTick: {
+        self.globalTimer = GlobalTimer(duration: timer_duration, onTick: {
             let timerStatus = self.globalTimer.getCurrentStatus()
             self.timerLabel.text = timerStatus
         }, whenFinished: {
@@ -189,13 +199,14 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         container.layer.cornerRadius = 5
         container.layer.masksToBounds = true
         
+        /*
         // Level label
         self.levelLabel = UILabel(frame: self.getFrameFor(parent: container.bounds, padding: 5))
         self.levelLabel.text = "Level 0"
         self.levelLabel.textColor = UIColor.white
         self.levelLabel.textAlignment = NSTextAlignment.center
-        self.levelLabel.font = UIFont.boldSystemFont(ofSize: 10)
-        container.contentView.addSubview(self.levelLabel)
+        self.levelLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        container.contentView.addSubview(self.levelLabel)*/
         
         // Coins View
         let coinsView = UIView(frame: self.getFrameFor(parent: container.bounds, width: 60, padding: 5))
@@ -204,11 +215,11 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         container.contentView.addSubview(coinsView)
         
         // Coins label
-        self.coinsLabel = UILabel(frame: self.getFrameFor(parent: coinsView.bounds))
-        self.coinsLabel.text = "0 coins"
-        self.coinsLabel.textAlignment = NSTextAlignment.center
-        self.coinsLabel.font = UIFont.boldSystemFont(ofSize: 7)
-        coinsView.addSubview(self.coinsLabel)
+        //self.coinsLabel = UILabel(frame: self.getFrameFor(parent: coinsView.bounds))
+        //self.coinsLabel.text = "0 coins"
+        //self.coinsLabel.textAlignment = NSTextAlignment.center
+        //self.coinsLabel.font = UIFont.boldSystemFont(ofSize: 7)
+        //coinsView.addSubview(self.coinsLabel)
         
         // Progress bar (leveling)
         self.progressBar = UIProgressView(frame: self.getFrameFor(parent: container.bounds, y: 23))
@@ -322,6 +333,15 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
                         self.coinAppear()
                     })
+                } else if resultNode.name == "FoxNode" || resultNode.name == "Max" {
+                    print("TAP FOXNODE")
+                    let location: CGPoint = gestureRecognize.location(in: scnView)
+                    let hits = self.scnView.hitTest(location, options: nil)
+                    
+                    if let tappedNode = hits.first?.node {
+                        print(tappedNode.name ?? "N/A")
+                        tappedNode.parent?.parent?.physicsBody?.applyForce(SCNVector3(0, 5, 0), asImpulse: true)
+                    }
                 }
             }
             else{
@@ -358,14 +378,14 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     }
     
     private func configureWorldBottom() {
-        let bottomPlane = SCNBox(width: 10000, height: 0.5, length: 10000, chamferRadius: 0)
+        let bottomPlane = SCNBox(width: 100000, height: 0.5, length: 100000, chamferRadius: 0)
         
         let material = SCNMaterial()
         material.diffuse.contents = UIColor(white: 1.0, alpha: 0.0)
         bottomPlane.materials = [material]
         
         let bottomNode = SCNNode(geometry: bottomPlane)
-        bottomNode.position = SCNVector3(x: 0, y: -5, z: 0)
+        bottomNode.position = SCNVector3(x: 0, y: -2, z: 0)
         
         let physicsBody = SCNPhysicsBody.static()
         physicsBody.categoryBitMask = CollisionTypes.bottom.rawValue
@@ -375,6 +395,22 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         self.scnView.scene.rootNode.addChildNode(bottomNode)
         self.scnView.scene.physicsWorld.contactDelegate = self
     }
+    
+    //send data to stats screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //******************************************************
+        let exp = self.ingredientsCollectedCounter * 100
+        let EACH_LEVEL_EXP = 500
+        let level = exp / EACH_LEVEL_EXP
+        //******************************************************
+        // Get the new view controller using segue.destinationViewController.
+        let destination = segue.destination as! StatsViewController
+        destination.level = level
+        destination.coins = Int(coins_lbl.text!)!
+        destination.points = exp
+        // Pass the selected object to the new view controller.
+    }
+    
 }
 
 // Close AR Plane Detection for now
