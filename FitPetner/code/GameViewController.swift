@@ -85,6 +85,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
 
         foodAppear()
         coinAppear()
+        objAppear()
         
         showUI()
         startTimer()
@@ -371,39 +372,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             
             // Food/coins only appear while user is exercising
             if (self.isExercise){
-                print(resultNode.name)
-                if (resultNode.name)?.range(of:"FOOD") != nil {
-                    // Make it disappear
-                    resultNode.removeFromParentNode()
-                    // We display the ingredient's information
-                    self.printFoodInfo(resultNode)
-                    // We now update our progress
-                    self.ingredientsCollectedCounter += 1
-                    self.updateProgress()
-                    // Food appear after given duration
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-                        self.foodAppear()
-                        self.objAppear()
-                    })
-                } else if resultNode.name == "COIN" {
-                    resultNode.removeFromParentNode()
-                    // Explosion effect
-                    createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
-                    
-                    self.rewardCoin()
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
-                        self.coinAppear()
-                    })
-                } else if (resultNode.name)?.range(of:"OBJECT") != nil  {
-                    resultNode.removeFromParentNode()
-                    // Explosion effect
-                    createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
-                        self.objAppear()
-                    })
-                } else if resultNode.name == "FoxNode" || resultNode.name == "Max" {
+                if resultNode.name == "FoxNode" || resultNode.name == "Max" {
                     print("TAP FOXNODE")
                     let location: CGPoint = gestureRecognize.location(in: scnView)
                     let hits = self.scnView.hitTest(location, options: nil)
@@ -413,22 +382,48 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
                         tappedNode.parent?.parent?.physicsBody?.applyForce(SCNVector3(0, 5, 0), asImpulse: true)
                     }
                 }
+                else{
+                    // Make it disappear
+                    resultNode.removeFromParentNode()
+                    if (resultNode.name)?.range(of:"FOOD") != nil {
+                        // We display the ingredient's information
+                        self.printFoodInfo(resultNode)
+                        // We now update our progress
+                        self.ingredientsCollectedCounter += 1
+                        self.updateProgress()
+                        // Food appear after given duration
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                            self.foodAppear()
+                        })
+                    } else if resultNode.name == "COIN" {
+                        // Explosion effect
+                        createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
+                        
+                        self.rewardCoin()
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+                            self.coinAppear()
+                        })
+                    } else if (resultNode.name)?.range(of:"OBJECT") != nil {
+                        createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+                            self.objAppear()
+                        })
+                    }
+                }
             }
             else{
+                resultNode.removeFromParentNode()
                 if (resultNode.name)?.range(of:"FOOD") != nil {
-                    resultNode.removeFromParentNode()
                     self.printFoodInfo(resultNode)
                     self.ingredientsCollectedCounter += 1
                     self.updateProgress()
                 } else if resultNode.name == "COIN" {
-                    resultNode.removeFromParentNode()
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.rewardCoin()
                 } else if (resultNode.name)?.range(of:"OBJECT") != nil {
-                    resultNode.removeFromParentNode()
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 } else if resultNode.name == "TROPHY" {
-                    resultNode.removeFromParentNode()
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 }
             }
