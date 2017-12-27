@@ -24,6 +24,25 @@
 		969BA0B31FE2AB2C00222CE5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0B21FE2AB2C00222CE5 /* Character.swift */; };
 		A73C374B1FE367D60097FF70 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A73C374A1FE367D60097FF70 /* art.scnassets */; };
 		A74578C41FE8F0A200748660 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74578C31FE8F0A200748660 /* Item.swift */; };
+		A75D46811FF33D6200910881 /* barkSoundClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0D21FF1201F00222CE5 /* barkSoundClose.png */; };
+		A75D46821FF33D6400910881 /* scoreImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0D31FF1203100222CE5 /* scoreImage.png */; };
+		A75D46831FF33D6600910881 /* group3.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C41FF0DEB400222CE5 /* group3.png */; };
+		A75D46841FF33D6800910881 /* dogfood.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CA1FF0DFC100222CE5 /* dogfood.png */; };
+		A75D46851FF33D6A00910881 /* drinkingBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CB1FF0DFDE00222CE5 /* drinkingBtn.png */; };
+		A75D46861FF33D6D00910881 /* duckdoll.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CC1FF0DFF900222CE5 /* duckdoll.png */; };
+		A75D46871FF33D7000910881 /* cake.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C61FF0DF1300222CE5 /* cake.png */; };
+		A75D46881FF33D7200910881 /* energyImge.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CD1FF0E01000222CE5 /* energyImge.png */; };
+		A75D46891FF33D7400910881 /* dogboneCookie.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C91FF0DF6C00222CE5 /* dogboneCookie.png */; };
+		A75D468A1FF33D7700910881 /* dogbone.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C81FF0DF4B00222CE5 /* dogbone.png */; };
+		A75D468B1FF33D7A00910881 /* bonecookieBoneBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CF1FF0EAA300222CE5 /* bonecookieBoneBtn.png */; };
+		A75D468C1FF33D7D00910881 /* coinsImage02.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C71FF0DF2E00222CE5 /* coinsImage02.png */; };
+		A75D468D1FF33D8000910881 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C51FF0DEF500222CE5 /* apple.png */; };
+		A75D468E1FF33D8200910881 /* feedingBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0D01FF0F4C100222CE5 /* feedingBox.png */; };
+		A75D468F1FF33D8400910881 /* trophyBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C21FF0DE6500222CE5 /* trophyBtn.png */; };
+		A75D46901FF33D8A00910881 /* stopJoggingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C31FF0DE8200222CE5 /* stopJoggingImage.png */; };
+		A75D46911FF33D8D00910881 /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C11FF0DDF700222CE5 /* football.png */; };
+		A75D46921FF33D9C00910881 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CE1FF0E08A00222CE5 /* settings.png */; };
+		A75D46931FF33D9E00910881 /* check-mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0D11FF1065900222CE5 /* check-mark@2x.png */; };
 		A79D3EE01FEFA9630077C621 /* CharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79D3EDF1FEFA9630077C621 /* CharacterController.swift */; };
 		A79D3EE11FEFA9A30077C621 /* personalSportBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */; };
 		A79D3EE21FEFA9A50077C621 /* bgOrangeFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0BE1FECFD9E00222CE5 /* bgOrangeFloor.png */; };
@@ -359,18 +378,37 @@
 				969BA0911FDEF45100222CE5 /* name.png in Resources */,
 				A79D3EE71FEFA9C00077C621 /* backHome.png in Resources */,
 				969BA08C1FDEF44300222CE5 /* app_icon.png in Resources */,
+				A75D46921FF33D9C00910881 /* settings.png in Resources */,
+				A75D46861FF33D6D00910881 /* duckdoll.png in Resources */,
+				A75D46891FF33D7400910881 /* dogboneCookie.png in Resources */,
+				A75D46831FF33D6600910881 /* group3.png in Resources */,
 				969BA0541FDA4E1F00222CE5 /* LaunchScreen.storyboard in Resources */,
+				A75D46811FF33D6200910881 /* barkSoundClose.png in Resources */,
+				A75D46901FF33D8A00910881 /* stopJoggingImage.png in Resources */,
+				A75D468F1FF33D8400910881 /* trophyBtn.png in Resources */,
+				A75D468B1FF33D7A00910881 /* bonecookieBoneBtn.png in Resources */,
+				A75D46881FF33D7200910881 /* energyImge.png in Resources */,
+				A75D468D1FF33D8000910881 /* apple.png in Resources */,
 				A79D3EE11FEFA9A30077C621 /* personalSportBtn.png in Resources */,
 				A79D3EE51FEFA9AD0077C621 /* mainscreenLogoBtn.png in Resources */,
+				A75D46851FF33D6A00910881 /* drinkingBtn.png in Resources */,
 				A73C374B1FE367D60097FF70 /* art.scnassets in Resources */,
 				A79D3EE41FEFA9AB0077C621 /* mainscreenBar.png in Resources */,
+				A75D46911FF33D8D00910881 /* football.png in Resources */,
+				A75D46931FF33D9E00910881 /* check-mark@2x.png in Resources */,
 				969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */,
+				A75D468C1FF33D7D00910881 /* coinsImage02.png in Resources */,
 				A79D3EE91FEFA9CA0077C621 /* app_icon 2.png in Resources */,
 				A79D3EE31FEFA9A80077C621 /* puppy01.png in Resources */,
 				A79D3EE81FEFA9C20077C621 /* barkSoundOpen.png in Resources */,
+				A75D46821FF33D6400910881 /* scoreImage.png in Resources */,
 				A79D3EE21FEFA9A50077C621 /* bgOrangeFloor.png in Resources */,
+				A75D46841FF33D6800910881 /* dogfood.png in Resources */,
 				A79D3EE61FEFA9B50077C621 /* fitpetnerLogo.png in Resources */,
+				A75D468A1FF33D7700910881 /* dogbone.png in Resources */,
+				A75D468E1FF33D8200910881 /* feedingBox.png in Resources */,
 				969BA04F1FDA4E1F00222CE5 /* Main.storyboard in Resources */,
+				A75D46871FF33D7000910881 /* cake.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,10 +609,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4CBC9K8AKU;
+				DEVELOPMENT_TEAM = CVQYMLPDBN;
 				INFOPLIST_FILE = FitPetner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.FitPetner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenialin.fitpetner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,10 +624,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4CBC9K8AKU;
+				DEVELOPMENT_TEAM = CVQYMLPDBN;
 				INFOPLIST_FILE = FitPetner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.FitPetner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xenialin.fitpetner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

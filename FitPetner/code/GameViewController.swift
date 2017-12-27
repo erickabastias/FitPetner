@@ -73,6 +73,15 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tap.numberOfTouchesRequired = 1
         self.scnView.addGestureRecognizer(tap)
+        
+        // add light
+        let light = SCNLight()
+        light.type = .omni
+        light.color = UIColor.white
+        let lightNode = SCNNode()
+        lightNode.position = SCNVector3Make(0, 0, 30)
+        lightNode.light = light
+        scnView.scene.rootNode.addChildNode(lightNode)
 
         foodAppear()
         coinAppear()
@@ -122,6 +131,14 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         else if foodNode.name == "FOOD_cookie"{
             title = "Cookie"
             description = "Eat adequate amount of cookies!"
+        }
+        else if foodNode.name == "FOOD_kiwi"{
+            title = "Kiwi"
+            description = "A lot of vitamin A, C, E and minerals, and many more nutritions inside!"
+        }
+        else if foodNode.name == "FOOD_orange"{
+            title = "Orange"
+            description = "Helps prevent cardiovascular diseases and stomach cancer. Also helps relieve cough!"
         }
         
         Popup(parent: self, title: title, content: description, okActionTitle: "Keep Exercising").show()
@@ -274,22 +291,65 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         //scnView.pointOfView?.addChildNode(itemToAppear)
         scnView.scene.rootNode.addChildNode(itemToAppear)
         
+        //        // Apply force
+        //        let force = SCNVector3(x:0, y:0, z:0)
+        //        let position = SCNVector3(x:10, y:0.05, z:0)
+        //        itemToAppear.physicsBody?.applyForce(force, at: position, asImpulse: true)
+        
+        // Rotation
+        let spin = CABasicAnimation(keyPath: "rotation")
+        // Use from-to to explicitly make a full rotation around y
+        spin.fromValue = NSValue(scnVector4: SCNVector4(x: 1, y: 1, z: 0, w: 0))
+        spin.toValue = NSValue(scnVector4: SCNVector4(x: 1, y: 1, z: 0, w: Float(CGFloat(2 * Double.pi))))
+        spin.duration = 8 // adjust speed
+        spin.repeatCount = .infinity
+        itemToAppear.addAnimation(spin, forKey: "spin around")
+        
         // Particle effect
         let particleEmitter = itemGenerator.createBokeh()
         itemToAppear.addParticleSystem(particleEmitter)
     }
     
     func coinAppear(){
-        var coinToAppear: SCNNode!
-        coinToAppear = itemGenerator.loadCoin()
-        //scnView.pointOfView?.addChildNode(coinToAppear)
-        scnView.scene.rootNode.addChildNode(coinToAppear)
+        var itemToAppear: SCNNode!
+        itemToAppear = itemGenerator.loadCoin()
+        //scnView.pointOfView?.addChildNode(itemToAppear)
+        scnView.scene.rootNode.addChildNode(itemToAppear)
+        
+        // Rotation
+        let spin = CABasicAnimation(keyPath: "rotation")
+        spin.fromValue = NSValue(scnVector4: SCNVector4(x: 1, y: 1, z: 1, w: 0))
+        spin.toValue = NSValue(scnVector4: SCNVector4(x: 1, y: 1, z: 1, w: Float(CGFloat(2 * Double.pi))))
+        spin.duration = 8 // adjust speed
+        spin.repeatCount = .infinity
+        itemToAppear.addAnimation(spin, forKey: "spin around")
+    }
+    
+    func objAppear(){
+        var itemToAppear: SCNNode!
+        itemToAppear = itemGenerator.loadObj()
+        scnView.scene.rootNode.addChildNode(itemToAppear)
+        
+        let spin = CABasicAnimation(keyPath: "rotation")
+        spin.fromValue = NSValue(scnVector4: SCNVector4(x: 0, y: 1, z: 0, w: 0))
+        spin.toValue = NSValue(scnVector4: SCNVector4(x: 0, y: 1, z: 0, w: Float(CGFloat(2 * Double.pi))))
+        spin.duration = 8 // adjust speed
+        spin.repeatCount = .infinity
+        itemToAppear.addAnimation(spin, forKey: "spin around")
     }
     
     func trophyAppear(){
         var itemToAppear: SCNNode!
         itemToAppear = itemGenerator.loadTrophy()
         scnView.scene.rootNode.addChildNode(itemToAppear)
+        
+        // Rotation
+        let spin = CABasicAnimation(keyPath: "rotation")
+        spin.fromValue = NSValue(scnVector4: SCNVector4(x: 0, y: 1, z: 0, w: 0))
+        spin.toValue = NSValue(scnVector4: SCNVector4(x: 0, y: 1, z: 0, w: Float(CGFloat(2 * Double.pi))))
+        spin.duration = 6 // adjust speed
+        spin.repeatCount = .infinity
+        itemToAppear.addAnimation(spin, forKey: "spin around")
         
         // Particle effect
         let particleEmitter = itemGenerator.createConfetti()
@@ -311,27 +371,37 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             
             // Food/coins only appear while user is exercising
             if (self.isExercise){
+                print(resultNode.name)
                 if (resultNode.name)?.range(of:"FOOD") != nil {
                     // Make it disappear
                     resultNode.removeFromParentNode()
-                    
                     // We display the ingredient's information
                     self.printFoodInfo(resultNode)
-                    
                     // We now update our progress
                     self.ingredientsCollectedCounter += 1
                     self.updateProgress()
-                    
+                    // Food appear after given duration
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                         self.foodAppear()
+                        self.objAppear()
                     })
                 } else if resultNode.name == "COIN" {
                     resultNode.removeFromParentNode()
+                    // Explosion effect
+                    createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     
                     self.rewardCoin()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
                         self.coinAppear()
+                    })
+                } else if (resultNode.name)?.range(of:"OBJECT") != nil  {
+                    resultNode.removeFromParentNode()
+                    // Explosion effect
+                    createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+                        self.objAppear()
                     })
                 } else if resultNode.name == "FoxNode" || resultNode.name == "Max" {
                     print("TAP FOXNODE")
@@ -346,19 +416,35 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             }
             else{
                 if (resultNode.name)?.range(of:"FOOD") != nil {
-                    // Make it disappear
                     resultNode.removeFromParentNode()
-                    // We display the ingredient's information
                     self.printFoodInfo(resultNode)
-                    // We now update our progress
                     self.ingredientsCollectedCounter += 1
                     self.updateProgress()
                 } else if resultNode.name == "COIN" {
                     resultNode.removeFromParentNode()
+                    createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.rewardCoin()
+                } else if (resultNode.name)?.range(of:"OBJECT") != nil {
+                    resultNode.removeFromParentNode()
+                    createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
+                } else if resultNode.name == "TROPHY" {
+                    resultNode.removeFromParentNode()
+                    createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 }
             }
         }
+    }
+    
+    // Explosion effect when item disappears
+    func createExplosion(geometry: SCNGeometry, position: SCNVector3, rotation: SCNVector4){
+        let explosion = SCNParticleSystem(named: "/art.scnassets/Particles/Explode.scnp", inDirectory: nil)!
+        explosion.emitterShape = geometry
+        explosion.birthLocation = .surface
+        
+        let rotationMatrix = SCNMatrix4MakeRotation(rotation.w, rotation.x, rotation.y, rotation.z)
+        let translationMatrix = SCNMatrix4MakeTranslation(position.x, position.y, position.z)
+        let transformMatrix = SCNMatrix4Mult(rotationMatrix, translationMatrix)
+        scnView.scene.addParticleSystem(explosion, transform: transformMatrix)
     }
     
     override var shouldAutorotate: Bool {
