@@ -12,22 +12,23 @@ class ChangeNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var datepicker: UIDatePicker!
     @IBOutlet weak var changename_txtfield: UITextField!
-    var timerduration = 0
+    var timerduration = 30
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        changename_txtfield.delegate = self
+        // Do any additional setup after loading the view.
+    }
     
     @IBAction func updatetimer(_ sender: UIDatePicker) {
         timerduration = Int(self.datepicker.countDownDuration)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ changename_txtfield: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,9 +43,8 @@ class ChangeNameViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         let destinationVC = segue.destination as! StatsViewController
-        let destinationVC2 = segue.destination as! GameViewController
         destinationVC.firstVCtext = changename_txtfield.text!
-        destinationVC2.timer_duration = timerduration
+        destinationVC.timer_duration = timerduration
         // Pass the selected object to the new view controller.
     }
     

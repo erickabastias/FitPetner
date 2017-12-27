@@ -11,6 +11,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var timer_duration = 30
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,15 +23,15 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        if segue.identifier == "game"{
+            let destinationVC = segue.destination as! GameViewController
+            destinationVC.timer_duration = timer_duration
+        }
+        // Pass the selected object to the new view controller.
+    }
  
     
 }

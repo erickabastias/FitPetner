@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -52,7 +52,7 @@
                                     <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="I6n-cN-oGO" kind="show" id="QX9-Nx-2oC"/>
+                                    <segue destination="I6n-cN-oGO" kind="show" identifier="stats" id="QX9-Nx-2oC"/>
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owz-2h-f9k">
@@ -65,7 +65,7 @@
                                     <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JtW-KF-AGL" kind="show" id="rbL-AS-QrX"/>
+                                    <segue destination="JtW-KF-AGL" kind="show" identifier="game" id="rbL-AS-QrX"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puppy01.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yz9-50-uex">
@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="175.86206896551727"/>
+            <point key="canvasLocation" x="-127" y="182"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="fUw-UL-pcv">
@@ -108,7 +108,7 @@
                                 <rect key="frame" x="164" y="28" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="BQj-x0-YIh"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="home" id="BQj-x0-YIh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN2-Jx-1wf">
@@ -217,7 +217,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="feedingBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="61Z-oK-YAw">
                                 <rect key="frame" x="87" y="78" width="200" height="50"/>
@@ -275,7 +275,7 @@
                                     <color key="titleShadowColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="I6n-cN-oGO" kind="show" id="Y8u-k4-cER"/>
+                                    <segue destination="I6n-cN-oGO" kind="show" identifier="" id="Y8u-k4-cER"/>
                                 </connections>
                             </button>
                         </subviews>

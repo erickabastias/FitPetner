@@ -23,6 +23,7 @@ class StatsViewController: UIViewController {
     var savedcoins = 0
     var savedlevel = 0
     var savedpoints = 0
+    var timer_duration = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +46,14 @@ class StatsViewController: UIViewController {
         savedcoins = savedcoins + coins
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "home"{
+        let destinationVC = segue.destination as! ViewController
+        destinationVC.timer_duration = timer_duration
+        }
     }
-    */
+
+    
 
 }

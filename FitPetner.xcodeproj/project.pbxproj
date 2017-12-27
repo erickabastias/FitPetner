@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9693DFDF1FF33B3C00D62B1D /* barkSoundClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0D21FF1201F00222CE5 /* barkSoundClose.png */; };
+		9693DFE01FF33B3F00D62B1D /* scoreImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0D31FF1203100222CE5 /* scoreImage.png */; };
+		9693DFE11FF33B4100D62B1D /* group3.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C41FF0DEB400222CE5 /* group3.png */; };
+		9693DFE21FF33B4400D62B1D /* dogfood.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CA1FF0DFC100222CE5 /* dogfood.png */; };
+		9693DFE31FF33B4700D62B1D /* drinkingBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CB1FF0DFDE00222CE5 /* drinkingBtn.png */; };
+		9693DFE41FF33B4A00D62B1D /* duckdoll.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CC1FF0DFF900222CE5 /* duckdoll.png */; };
+		9693DFE51FF33B4C00D62B1D /* cake.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C61FF0DF1300222CE5 /* cake.png */; };
+		9693DFE61FF33B4F00D62B1D /* energyImge.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CD1FF0E01000222CE5 /* energyImge.png */; };
+		9693DFE71FF33B5300D62B1D /* dogboneCookie.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C91FF0DF6C00222CE5 /* dogboneCookie.png */; };
+		9693DFE81FF33B5600D62B1D /* dogbone.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C81FF0DF4B00222CE5 /* dogbone.png */; };
+		9693DFE91FF33B5900D62B1D /* bonecookieBoneBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CF1FF0EAA300222CE5 /* bonecookieBoneBtn.png */; };
+		9693DFEA1FF33B5C00D62B1D /* coinsImage02.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C71FF0DF2E00222CE5 /* coinsImage02.png */; };
+		9693DFEB1FF33B6000D62B1D /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C51FF0DEF500222CE5 /* apple.png */; };
+		9693DFEC1FF33B6300D62B1D /* feedingBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0D01FF0F4C100222CE5 /* feedingBox.png */; };
+		9693DFED1FF33B6700D62B1D /* trophyBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C21FF0DE6500222CE5 /* trophyBtn.png */; };
+		9693DFEE1FF33B6E00D62B1D /* stopJoggingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C31FF0DE8200222CE5 /* stopJoggingImage.png */; };
+		9693DFEF1FF33B7200D62B1D /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0C11FF0DDF700222CE5 /* football.png */; };
+		9693DFF01FF33B8600D62B1D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0CE1FF0E08A00222CE5 /* settings.png */; };
+		9693DFF11FF33B8900D62B1D /* check-mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0D11FF1065900222CE5 /* check-mark@2x.png */; };
 		969BA0481FDA4E1F00222CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0471FDA4E1F00222CE5 /* AppDelegate.swift */; };
 		969BA04F1FDA4E1F00222CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969BA04D1FDA4E1F00222CE5 /* Main.storyboard */; };
 		969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0501FDA4E1F00222CE5 /* Assets.xcassets */; };
@@ -359,18 +378,37 @@
 				969BA0911FDEF45100222CE5 /* name.png in Resources */,
 				A79D3EE71FEFA9C00077C621 /* backHome.png in Resources */,
 				969BA08C1FDEF44300222CE5 /* app_icon.png in Resources */,
+				9693DFF01FF33B8600D62B1D /* settings.png in Resources */,
+				9693DFE41FF33B4A00D62B1D /* duckdoll.png in Resources */,
+				9693DFE71FF33B5300D62B1D /* dogboneCookie.png in Resources */,
+				9693DFE11FF33B4100D62B1D /* group3.png in Resources */,
 				969BA0541FDA4E1F00222CE5 /* LaunchScreen.storyboard in Resources */,
+				9693DFDF1FF33B3C00D62B1D /* barkSoundClose.png in Resources */,
+				9693DFEE1FF33B6E00D62B1D /* stopJoggingImage.png in Resources */,
+				9693DFED1FF33B6700D62B1D /* trophyBtn.png in Resources */,
+				9693DFE91FF33B5900D62B1D /* bonecookieBoneBtn.png in Resources */,
+				9693DFE61FF33B4F00D62B1D /* energyImge.png in Resources */,
+				9693DFEB1FF33B6000D62B1D /* apple.png in Resources */,
 				A79D3EE11FEFA9A30077C621 /* personalSportBtn.png in Resources */,
 				A79D3EE51FEFA9AD0077C621 /* mainscreenLogoBtn.png in Resources */,
+				9693DFE31FF33B4700D62B1D /* drinkingBtn.png in Resources */,
 				A73C374B1FE367D60097FF70 /* art.scnassets in Resources */,
 				A79D3EE41FEFA9AB0077C621 /* mainscreenBar.png in Resources */,
+				9693DFEF1FF33B7200D62B1D /* football.png in Resources */,
+				9693DFF11FF33B8900D62B1D /* check-mark@2x.png in Resources */,
 				969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */,
+				9693DFEA1FF33B5C00D62B1D /* coinsImage02.png in Resources */,
 				A79D3EE91FEFA9CA0077C621 /* app_icon 2.png in Resources */,
 				A79D3EE31FEFA9A80077C621 /* puppy01.png in Resources */,
 				A79D3EE81FEFA9C20077C621 /* barkSoundOpen.png in Resources */,
+				9693DFE01FF33B3F00D62B1D /* scoreImage.png in Resources */,
 				A79D3EE21FEFA9A50077C621 /* bgOrangeFloor.png in Resources */,
+				9693DFE21FF33B4400D62B1D /* dogfood.png in Resources */,
 				A79D3EE61FEFA9B50077C621 /* fitpetnerLogo.png in Resources */,
+				9693DFE81FF33B5600D62B1D /* dogbone.png in Resources */,
+				9693DFEC1FF33B6300D62B1D /* feedingBox.png in Resources */,
 				969BA04F1FDA4E1F00222CE5 /* Main.storyboard in Resources */,
+				9693DFE51FF33B4C00D62B1D /* cake.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
