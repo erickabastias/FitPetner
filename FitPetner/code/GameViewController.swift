@@ -41,7 +41,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     var coinsCounter: Int = 0
     var ingredientsCollectedCounter: Int = 0
     var globalTimer: GlobalTimer!
-    var timer_duration = 30
+    var timer_duration = 10
     
     // Global boolean to determine user state
     var isExercise: Bool = true
@@ -163,7 +163,9 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         let exp = self.ingredientsCollectedCounter * 100
         // One level every 500 experience points
         let EACH_LEVEL_EXP = 500
-        let level = exp / EACH_LEVEL_EXP
+        var level = 0
+        level = exp / EACH_LEVEL_EXP*(level+1)
+        //it will be harder to go up level each level up.
         //******************************************************
         // Retrieve the current progress
         var currentProgress: Float = Float(exp - level * EACH_LEVEL_EXP)
@@ -425,6 +427,8 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 } else if resultNode.name == "TROPHY" {
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
+                    self.performSegue(withIdentifier: "popup", sender: self)
+                    print("hola")
                 }
             }
         }
@@ -479,17 +483,19 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     
     //send data to stats screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "popup"{
         //******************************************************
         let exp = self.ingredientsCollectedCounter * 100
         let EACH_LEVEL_EXP = 500
         let level = exp / EACH_LEVEL_EXP
         //******************************************************
         // Get the new view controller using segue.destinationViewController.
-        let destination = segue.destination as! StatsViewController
+        let destination = segue.destination as! PUViewController
         destination.level = level
         destination.coins = Int(coins_lbl.text!)!
         destination.points = exp
         // Pass the selected object to the new view controller.
+        }
     }
     
 }

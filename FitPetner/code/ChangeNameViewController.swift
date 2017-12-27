@@ -9,10 +9,11 @@
 import UIKit
 
 class ChangeNameViewController: UIViewController, UITextFieldDelegate {
-    
-    @IBOutlet weak var datepicker: UIDatePicker!
+
     @IBOutlet weak var changename_txtfield: UITextField!
     var timerduration = 30
+    @IBOutlet weak var timer: UIStepper!
+    @IBOutlet weak var timer_label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +21,8 @@ class ChangeNameViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func updatetimer(_ sender: UIDatePicker) {
-        timerduration = Int(self.datepicker.countDownDuration)
+    @IBAction func change_timer(_ timer: UIStepper) {
+        timer_label.text = Int(timer.value).description + " minutes"
     }
     
     func textFieldShouldReturn(_ changename_txtfield: UITextField) -> Bool {
@@ -44,7 +45,7 @@ class ChangeNameViewController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         let destinationVC = segue.destination as! StatsViewController
         destinationVC.firstVCtext = changename_txtfield.text!
-        destinationVC.timer_duration = timerduration
+        destinationVC.timer_duration = (Int(timer.value)*60)
         // Pass the selected object to the new view controller.
     }
     
