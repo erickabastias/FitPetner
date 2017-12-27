@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -392,6 +392,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="WbU-2I-Rck"/>
         <segue reference="Y8u-k4-cER"/>
-        <segue reference="Cvl-e0-U68"/>
+        <segue reference="BQj-x0-YIh"/>
     </inferredMetricsTieBreakers>
 </document>
