@@ -83,9 +83,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         lightNode.light = light
         scnView.scene.rootNode.addChildNode(lightNode)
 
-        foodAppear()
-        coinAppear()
-        objAppear()
+        randomAppear()
         
         showUI()
         startTimer()
@@ -341,6 +339,19 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         itemToAppear.addAnimation(spin, forKey: "spin around")
     }
     
+    // Random selector for food / coin / obj to appear
+    func randomAppear(){
+        let numberOfItem = Int(3) // 新增物品時記得改這邊的數字
+        let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
+        if (randomNumber == 1){
+            foodAppear()
+        } else if (randomNumber == 2){
+            coinAppear()
+        } else if (randomNumber == 3){
+            objAppear()
+        }
+    }
+    
     func trophyAppear(){
         var itemToAppear: SCNNode!
         itemToAppear = itemGenerator.loadTrophy()
@@ -395,7 +406,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
                         self.updateProgress()
                         // Food appear after given duration
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-                            self.foodAppear()
+                            self.randomAppear()
                         })
                     } else if resultNode.name == "COIN" {
                         // Explosion effect
@@ -404,12 +415,12 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
                         self.rewardCoin()
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
-                            self.coinAppear()
+                            self.randomAppear()
                         })
                     } else if (resultNode.name)?.range(of:"OBJECT") != nil {
                         createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
-                            self.objAppear()
+                            self.randomAppear()
                         })
                     }
                 }
