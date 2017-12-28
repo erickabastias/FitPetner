@@ -76,15 +76,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMA-y0-hCX">
-                                <rect key="frame" x="257" y="557" width="88" height="88"/>
+                                <rect key="frame" x="271" y="559" width="88" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="barkSoundOpen.png"/>
+                                <state key="highlighted" image="barkSoundClose.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNP-1E-SaQ">
+                                <rect key="frame" x="271" y="559" width="88" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="barkSoundOpen.png"/>
+                                <state key="selected" image="barkSoundClose.png"/>
+                                <state key="highlighted" image="barkSoundClose.png"/>
+                                <connections>
+                                    <action selector="SoundControl:" destination="BV1-FR-VrT" eventType="touchUpInside" id="nHx-5N-Vrz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="IWy-sK-C2t"/>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="sound_button" destination="oNP-1E-SaQ" id="M5J-6W-hyZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,6 +188,7 @@
                                 <rect key="frame" x="257" y="557" width="88" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="barkSoundOpen.png"/>
+                                <state key="highlighted" image="barkSoundClose.png"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainscreenBar.png" translatesAutoresizingMaskIntoConstraints="NO" id="jYD-bT-kgE">
                                 <rect key="frame" x="38" y="-12" width="289" height="128"/>
@@ -257,6 +272,7 @@
                                 <rect key="frame" x="257" y="557" width="88" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="barkSoundOpen.png"/>
+                                <state key="highlighted" image="barkSoundClose.png"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="feedingBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-yI-Y78">
                                 <rect key="frame" x="29" y="559" width="76" height="76"/>
@@ -344,11 +360,6 @@
                                 <color key="shadowColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="1" height="3"/>
                             </label>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOY-sy-U3D">
-                                <rect key="frame" x="257" y="557" width="88" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="barkSoundOpen.png"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bonecookieBoneBtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="rbf-oD-xxw">
                                 <rect key="frame" x="20" y="165" width="52" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -374,6 +385,15 @@
                                 <color key="textColor" red="0.87217611074447632" green="0.40010082721710205" blue="0.24672693014144897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOY-sy-U3D">
+                                <rect key="frame" x="255" y="559" width="88" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="barkSoundOpen.png"/>
+                                <state key="highlighted" image="barkSoundClose.png"/>
+                                <connections>
+                                    <action selector="Sound:" destination="JtW-KF-AGL" eventType="touchUpInside" id="VwE-TJ-7Sa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aMp-Ma-VjW"/>
@@ -438,6 +458,9 @@
                                 <size key="shadowOffset" width="1" height="3"/>
                             </label>
                         </subviews>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" image="YES"/>
+                        </accessibility>
                         <viewLayoutGuide key="safeArea" id="OUC-N9-7iN"/>
                     </view>
                 </viewController>
@@ -448,6 +471,7 @@
     </scenes>
     <resources>
         <image name="backHome.png" width="168" height="55"/>
+        <image name="barkSoundClose.png" width="88" height="88"/>
         <image name="barkSoundOpen.png" width="88" height="88"/>
         <image name="bgOrangeFloor.png" width="414" height="327"/>
         <image name="bonecookieBoneBtn.png" width="159" height="159"/>
@@ -463,7 +487,7 @@
         <image name="settings.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PFv-md-y20"/>
-        <segue reference="BQj-x0-YIh"/>
+        <segue reference="QX9-Nx-2oC"/>
+        <segue reference="Cvl-e0-U68"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -52,6 +52,9 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     // Character
     var characterController: Character?
     
+    //Music
+    var mute: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -506,6 +509,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         destination.coins = Int(coins_lbl.text!)!
         destination.points = exp
         // Pass the selected object to the new view controller.
+        destination.mute = mute
         }
     }
     

@@ -9,11 +9,13 @@
 import UIKit
 
 class ChangeNameViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var changename_txtfield: UITextField!
     var timerduration = 30
     @IBOutlet weak var timer: UIStepper!
     @IBOutlet weak var timer_label: UILabel!
+    
+    var mute: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,7 @@ class ChangeNameViewController: UIViewController, UITextFieldDelegate {
         let destinationVC = segue.destination as! StatsViewController
         destinationVC.firstVCtext = changename_txtfield.text!
         destinationVC.timer_duration = (Int(timer.value)*60)
+        destinationVC.mute = mute
         // Pass the selected object to the new view controller.
     }
     

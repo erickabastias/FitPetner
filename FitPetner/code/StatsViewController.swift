@@ -24,6 +24,7 @@ class StatsViewController: UIViewController {
     var savedlevel = 0
     var savedpoints = 0
     var timer_duration = 30
+    var mute: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class StatsViewController: UIViewController {
         if segue.identifier == "home"{
         let destinationVC = segue.destination as! ViewController
         destinationVC.timer_duration = timer_duration
+        destinationVC.mute = mute
         }
     }
 

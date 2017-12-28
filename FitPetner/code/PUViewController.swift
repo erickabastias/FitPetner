@@ -12,9 +12,12 @@ class PUViewController: UIViewController{
     var coins = 0
     var level = 0
     var points = 0
+    var mute: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.clear
+        view.isOpaque = false
         // Do any additional setup after loading the view.
     }
     
@@ -29,6 +32,7 @@ class PUViewController: UIViewController{
         destination.level = level
         destination.coins = coins
         destination.points = points
+        destination.mute = mute
         // Pass the selected object to the new view controller.
     }
     
