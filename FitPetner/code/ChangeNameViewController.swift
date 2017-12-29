@@ -8,14 +8,28 @@
 
 import UIKit
 
-class ChangeNameViewController: UIViewController, UITextFieldDelegate {
+class ChangeNameViewController: MusicView, UITextFieldDelegate {
     
     @IBOutlet weak var changename_txtfield: UITextField!
     var timerduration = 30
     @IBOutlet weak var timer: UIStepper!
     @IBOutlet weak var timer_label: UILabel!
+    @IBOutlet weak var sound_button: UIButton!
     
-    var mute: Bool = false
+    @IBAction func SoundControl(_ sender: UIButton) {
+        if mute{
+            mute = false
+            backgroundMusicPlayer.play()
+            sound_button.isSelected = false
+            music = true
+        }
+        else{
+            backgroundMusicPlayer.pause()
+            music = false
+            mute = true
+            sound_button.isSelected = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +62,6 @@ class ChangeNameViewController: UIViewController, UITextFieldDelegate {
         let destinationVC = segue.destination as! StatsViewController
         destinationVC.firstVCtext = changename_txtfield.text!
         destinationVC.timer_duration = (Int(timer.value)*60)
-        destinationVC.mute = mute
         // Pass the selected object to the new view controller.
     }
     

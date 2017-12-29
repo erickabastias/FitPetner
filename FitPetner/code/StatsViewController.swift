@@ -8,13 +8,28 @@
 
 import UIKit
 
-class StatsViewController: UIViewController {
+class StatsViewController: MusicView {
     
     @IBOutlet weak var coinslbl: UILabel!
     @IBOutlet weak var pointslbl: UILabel!
     @IBOutlet weak var namelbl: UILabel!
     @IBOutlet weak var level_lbl: UILabel!
+    @IBOutlet weak var sound_button: UIButton!
     
+    @IBAction func SoundControl(_ sender: UIButton) {
+        if mute{
+            mute = false
+            backgroundMusicPlayer.play()
+            sound_button.isSelected = false
+            music = true
+        }
+        else{
+            backgroundMusicPlayer.pause()
+            music = false
+            mute = true
+            sound_button.isSelected = true
+        }
+    }
     
     var firstVCtext = "NAME"
     var level = 0
@@ -24,7 +39,6 @@ class StatsViewController: UIViewController {
     var savedlevel = 0
     var savedpoints = 0
     var timer_duration = 30
-    var mute: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()

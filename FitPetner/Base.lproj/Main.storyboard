@@ -189,6 +189,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="barkSoundOpen.png"/>
                                 <state key="highlighted" image="barkSoundClose.png"/>
+                                <connections>
+                                    <action selector="SoundControl:" destination="I6n-cN-oGO" eventType="touchUpInside" id="Ooq-8P-Nkf"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainscreenBar.png" translatesAutoresizingMaskIntoConstraints="NO" id="jYD-bT-kgE">
                                 <rect key="frame" x="38" y="-12" width="289" height="128"/>
@@ -221,6 +224,7 @@
                         <outlet property="level_lbl" destination="pIv-V3-GSe" id="Wm2-Ga-6Eu"/>
                         <outlet property="namelbl" destination="joO-i6-hCO" id="63v-TW-qz5"/>
                         <outlet property="pointslbl" destination="BsS-h6-Tvf" id="M82-fK-lGi"/>
+                        <outlet property="sound_button" destination="NVZ-xN-r5Z" id="MBw-0o-C72"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3H-AT-osc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,6 +277,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="barkSoundOpen.png"/>
                                 <state key="highlighted" image="barkSoundClose.png"/>
+                                <connections>
+                                    <action selector="SoundControl:" destination="Ab5-Qv-10K" eventType="touchUpInside" id="RR4-n2-fxX"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="feedingBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-yI-Y78">
                                 <rect key="frame" x="29" y="559" width="76" height="76"/>
@@ -319,6 +326,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="changename_txtfield" destination="K3e-v9-OFd" id="gVl-NT-b7l"/>
+                        <outlet property="sound_button" destination="Nj4-3P-xRI" id="81e-1x-R9U"/>
                         <outlet property="timer" destination="Ige-zp-QSc" id="u1w-oj-cZs"/>
                         <outlet property="timer_label" destination="rz1-qZ-VTf" id="dam-Yz-y4e"/>
                     </connections>
@@ -391,7 +399,7 @@
                                 <state key="normal" image="barkSoundOpen.png"/>
                                 <state key="highlighted" image="barkSoundClose.png"/>
                                 <connections>
-                                    <action selector="Sound:" destination="JtW-KF-AGL" eventType="touchUpInside" id="VwE-TJ-7Sa"/>
+                                    <action selector="ControlSound:" destination="JtW-KF-AGL" eventType="touchUpInside" id="vGM-XG-Fcg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -406,6 +414,7 @@
                         <outlet property="levelLabel" destination="yfU-Pa-xXc" id="Nf0-Ln-rnt"/>
                         <outlet property="pointsLabel" destination="tBT-Vb-o8b" id="xCP-5j-G90"/>
                         <outlet property="scnView" destination="Pnz-6I-LpC" id="AfL-0h-PPo"/>
+                        <outlet property="sound_button" destination="MOY-sy-U3D" id="k4U-4c-XGG"/>
                         <segue destination="aqf-W2-O1s" kind="popoverPresentation" identifier="popup" popoverAnchorView="Pnz-6I-LpC" id="dis-d6-eFR">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                             <popoverPassthroughViews>
@@ -487,7 +496,7 @@
         <image name="settings.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QX9-Nx-2oC"/>
-        <segue reference="Cvl-e0-U68"/>
+        <segue reference="Y8u-k4-cER"/>
+        <segue reference="BQj-x0-YIh"/>
     </inferredMetricsTieBreakers>
 </document>

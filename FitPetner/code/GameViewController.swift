@@ -18,7 +18,7 @@ import HealthKitUI
 import CoreMotion
 import SpriteKit
 
-class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate {
+class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
     @IBOutlet weak var score_lbl: UILabel!
     @IBOutlet weak var timer_lbl: UILabel!
     @IBOutlet weak var coins_lbl: UILabel!
@@ -28,6 +28,22 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     @IBOutlet var scnView: ARSCNView!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var sound_button: UIButton!
+    
+    @IBAction func ControlSound(_ sender: Any) {
+        if mute{
+            mute = false
+            backgroundMusicPlayer.play()
+            sound_button.isSelected = false
+            music = true
+        }
+        else{
+            backgroundMusicPlayer.pause()
+            music = false
+            mute = true
+            sound_button.isSelected = true
+        }
+    }
     
     let pedometer: CMPedometer = CMPedometer() // An object for fetching the system-generated live walking data.
     
@@ -51,9 +67,6 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     
     // Character
     var characterController: Character?
-    
-    //Music
-    var mute: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -431,15 +444,18 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             else{
                 resultNode.removeFromParentNode()
                 if (resultNode.name)?.range(of:"FOOD") != nil {
+                    playSoundEffect(filename: "points")
                     self.printFoodInfo(resultNode)
                     self.ingredientsCollectedCounter += 1
                     self.updateProgress()
                 } else if resultNode.name == "COIN" {
+                    playSoundEffect(filename: "coin")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.rewardCoin()
                 } else if (resultNode.name)?.range(of:"OBJECT") != nil {
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 } else if resultNode.name == "TROPHY" {
+                    playSoundEffect(filename:"trophy")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.performSegue(withIdentifier: "popup", sender: self)
                     print("hola")
