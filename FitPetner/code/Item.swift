@@ -103,8 +103,8 @@ struct itemGenerator {
         
         // Randomly choose item to appear
         let numberOfItem = Int(2) // 新增物品時記得改這邊的數字
-        //let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
-        let randomNumber = 2 // for test use only
+        let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
+        //let randomNumber = 2 // for test use only
         var itemLoaded: SCNNode!
         
         if (randomNumber == 1) {

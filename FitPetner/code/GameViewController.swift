@@ -400,7 +400,7 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
     
     // Random selector for food / coin / obj to appear
     func randomAppear(){
-        let numberOfItem = Int(3) // 新增物品時記得改這邊的數字
+        let numberOfItem = Int(5) // 新增物品時記得改這邊的數字
         let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
         if (randomNumber == 1){
             foodAppear()
@@ -408,6 +408,10 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
             coinAppear()
         } else if (randomNumber == 3){
             objAppear()
+        } else if (randomNumber == 4){
+            foodAppear()
+        } else if (randomNumber == 5){
+            foodAppear()
         }
     }
     
@@ -488,19 +492,19 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
             else{
                 resultNode.removeFromParentNode()
                 if (resultNode.name)?.range(of:"FOOD") != nil {
-                    playSoundEffect(filename: "points")
+                    playSoundEffect(filename: "sound.assets/points.mp3")
                     self.printFoodInfo(resultNode)
                     self.ingredientsCollectedCounter += 1
                     self.updateProgress()
                 } else if resultNode.name == "COIN" {
-                    playSoundEffect(filename: "coin")
+                    playSoundEffect(filename: "sound.assets/coin.mp3")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.rewardCoin()
                 } else if (resultNode.name)?.range(of:"OBJECT") != nil {
                     self.printObjInfo(resultNode)
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 } else if resultNode.name == "TROPHY" {
-                    playSoundEffect(filename:"trophy")
+                    playSoundEffect(filename:"sound.assets/trophy.mp3")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.performSegue(withIdentifier: "popup", sender: self)
                     print("hola")
