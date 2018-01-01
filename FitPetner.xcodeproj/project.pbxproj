@@ -43,6 +43,9 @@
 		969BA0B31FE2AB2C00222CE5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BA0B21FE2AB2C00222CE5 /* Character.swift */; };
 		A73C374B1FE367D60097FF70 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A73C374A1FE367D60097FF70 /* art.scnassets */; };
 		A74578C41FE8F0A200748660 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74578C31FE8F0A200748660 /* Item.swift */; };
+		A74E89751FFA235500E9063C /* PUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74E89731FFA235500E9063C /* PUViewController.swift */; };
+		A74E89761FFA235500E9063C /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74E89741FFA235500E9063C /* MusicView.swift */; };
+		A74E89781FFA239E00E9063C /* sound.assets in Resources */ = {isa = PBXBuildFile; fileRef = A74E89771FFA239E00E9063C /* sound.assets */; };
 		A79D3EE01FEFA9630077C621 /* CharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79D3EDF1FEFA9630077C621 /* CharacterController.swift */; };
 		A79D3EE11FEFA9A30077C621 /* personalSportBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0BF1FECFF3000222CE5 /* personalSportBtn.png */; };
 		A79D3EE21FEFA9A50077C621 /* bgOrangeFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA0BE1FECFD9E00222CE5 /* bgOrangeFloor.png */; };
@@ -125,6 +128,9 @@
 		969BA0D31FF1203100222CE5 /* scoreImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreImage.png; sourceTree = "<group>"; };
 		A73C374A1FE367D60097FF70 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		A74578C31FE8F0A200748660 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A74E89731FFA235500E9063C /* PUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PUViewController.swift; sourceTree = "<group>"; };
+		A74E89741FFA235500E9063C /* MusicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
+		A74E89771FFA239E00E9063C /* sound.assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound.assets; sourceTree = "<group>"; };
 		A79D3EDF1FEFA9630077C621 /* CharacterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				969BA0B41FE2AF2800222CE5 /* code */,
+				A74E89771FFA239E00E9063C /* sound.assets */,
 				A73C374A1FE367D60097FF70 /* art.scnassets */,
 				969BA0501FDA4E1F00222CE5 /* Assets.xcassets */,
 				969BA04D1FDA4E1F00222CE5 /* Main.storyboard */,
@@ -209,6 +216,8 @@
 		969BA0B41FE2AF2800222CE5 /* code */ = {
 			isa = PBXGroup;
 			children = (
+				A74E89741FFA235500E9063C /* MusicView.swift */,
+				A74E89731FFA235500E9063C /* PUViewController.swift */,
 				A79D3EDF1FEFA9630077C621 /* CharacterController.swift */,
 				969BA0471FDA4E1F00222CE5 /* AppDelegate.swift */,
 				969BA04B1FDA4E1F00222CE5 /* ViewController.swift */,
@@ -396,6 +405,7 @@
 				A79D3EE41FEFA9AB0077C621 /* mainscreenBar.png in Resources */,
 				9693DFEF1FF33B7200D62B1D /* football.png in Resources */,
 				9693DFF11FF33B8900D62B1D /* check-mark@2x.png in Resources */,
+				A74E89781FFA239E00E9063C /* sound.assets in Resources */,
 				969BA0511FDA4E1F00222CE5 /* Assets.xcassets in Resources */,
 				9693DFEA1FF33B5C00D62B1D /* coinsImage02.png in Resources */,
 				A79D3EE91FEFA9CA0077C621 /* app_icon 2.png in Resources */,
@@ -437,11 +447,13 @@
 				A74578C41FE8F0A200748660 /* Item.swift in Sources */,
 				969BA09D1FE29D7700222CE5 /* GlobalTimer.swift in Sources */,
 				A79D3EE01FEFA9630077C621 /* CharacterController.swift in Sources */,
+				A74E89751FFA235500E9063C /* PUViewController.swift in Sources */,
 				969BA07D1FDEF1A800222CE5 /* ViewController.swift in Sources */,
 				969BA0781FDEEE3200222CE5 /* GameViewController.swift in Sources */,
 				969BA07C1FDEEE8500222CE5 /* ChangeNameViewController.swift in Sources */,
 				969BA07A1FDEEE5700222CE5 /* StatsViewController.swift in Sources */,
 				969BA0481FDA4E1F00222CE5 /* AppDelegate.swift in Sources */,
+				A74E89761FFA235500E9063C /* MusicView.swift in Sources */,
 				969BA0B31FE2AB2C00222CE5 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
