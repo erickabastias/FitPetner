@@ -8,13 +8,28 @@
 
 import UIKit
 
-class StatsViewController: UIViewController {
+class StatsViewController: MusicView {
     
     @IBOutlet weak var coinslbl: UILabel!
     @IBOutlet weak var pointslbl: UILabel!
     @IBOutlet weak var namelbl: UILabel!
     @IBOutlet weak var level_lbl: UILabel!
+    @IBOutlet weak var sound_button: UIButton!
     
+    @IBAction func SoundControl(_ sender: UIButton) {
+        if mute{
+            mute = false
+            backgroundMusicPlayer.play()
+            sound_button.isSelected = false
+            music = true
+        }
+        else{
+            backgroundMusicPlayer.pause()
+            music = false
+            mute = true
+            sound_button.isSelected = true
+        }
+    }
     
     var firstVCtext = "NAME"
     var level = 0
@@ -23,6 +38,7 @@ class StatsViewController: UIViewController {
     var savedcoins = 0
     var savedlevel = 0
     var savedpoints = 0
+    var timer_duration = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +61,15 @@ class StatsViewController: UIViewController {
         savedcoins = savedcoins + coins
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "home"{
+        let destinationVC = segue.destination as! ViewController
+        destinationVC.timer_duration = timer_duration
+        destinationVC.mute = mute
+        }
     }
-    */
+
+    
 
 }

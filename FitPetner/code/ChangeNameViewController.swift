@@ -8,26 +8,44 @@
 
 import UIKit
 
-class ChangeNameViewController: UIViewController, UITextFieldDelegate {
+class ChangeNameViewController: MusicView, UITextFieldDelegate {
     
-    @IBOutlet weak var datepicker: UIDatePicker!
     @IBOutlet weak var changename_txtfield: UITextField!
-    var timerduration = 0
+    var timerduration = 30
+    @IBOutlet weak var timer: UIStepper!
+    @IBOutlet weak var timer_label: UILabel!
+    @IBOutlet weak var sound_button: UIButton!
     
-    @IBAction func updatetimer(_ sender: UIDatePicker) {
-        timerduration = Int(self.datepicker.countDownDuration)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
+    @IBAction func SoundControl(_ sender: UIButton) {
+        if mute{
+            mute = false
+            backgroundMusicPlayer.play()
+            sound_button.isSelected = false
+            music = true
+        }
+        else{
+            backgroundMusicPlayer.pause()
+            music = false
+            mute = true
+            sound_button.isSelected = true
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        changename_txtfield.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func change_timer(_ timer: UIStepper) {
+        timer_label.text = Int(timer.value).description + " minutes"
+    }
+    
+    func textFieldShouldReturn(_ changename_txtfield: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,9 +60,8 @@ class ChangeNameViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         let destinationVC = segue.destination as! StatsViewController
-        let destinationVC2 = segue.destination as! GameViewController
         destinationVC.firstVCtext = changename_txtfield.text!
-        destinationVC2.timer_duration = timerduration
+        destinationVC.timer_duration = (Int(timer.value)*60)
         // Pass the selected object to the new view controller.
     }
     

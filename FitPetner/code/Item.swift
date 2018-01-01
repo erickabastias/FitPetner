@@ -8,9 +8,9 @@ struct itemGenerator {
         // var itemArray : [SCNNode] = [] // Choose not to store items in an array
         
         // Randomly choose item to appear
-        let numberOfItem = Int(6) // 新增物品時記得改這邊的數字
+        let numberOfItem = Int(10) // 新增物品時記得改這邊的數字
         let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
-        // let randomNumber = 6 // for test use only
+        //let randomNumber = 11 // for test use only
         var itemLoaded: SCNNode!
         
         if (randomNumber == 1) {
@@ -49,7 +49,38 @@ struct itemGenerator {
             itemLoaded = scene.rootNode.childNode(withName: "orange", recursively: true)
             itemLoaded.name = "FOOD_orange"
             itemLoaded.scale = SCNVector3(x: 15, y: 15, z: 15)
+        } else if (randomNumber == 7) {
+            // Load model
+            let scene = SCNScene( named: "/art.scnassets/New/bread.scn")!
+            itemLoaded = scene.rootNode.childNode(withName: "bread", recursively: true)
+            itemLoaded.name = "FOOD_bread"
+            itemLoaded.scale = SCNVector3(x: 2, y: 2, z: 2)
+        } else if (randomNumber == 8) {
+            // Load model
+            let scene = SCNScene( named: "/art.scnassets/New/Carrot.scn")!
+            itemLoaded = scene.rootNode.childNode(withName: "carrot", recursively: true)
+            itemLoaded.name = "FOOD_carrot"
+            itemLoaded.scale = SCNVector3(x: 0.4, y: 0.4, z: 0.4)
+        } else if (randomNumber == 9) {
+            // Load model
+            let scene = SCNScene( named: "/art.scnassets/New/pumpkin.scn")!
+            itemLoaded = scene.rootNode.childNode(withName: "pumpkin", recursively: true)
+            itemLoaded.name = "FOOD_pumpkin"
+            itemLoaded.scale = SCNVector3(x: 0.9, y: 0.9, z: 0.9)
+        } else if (randomNumber == 10) {
+            // Load model
+            let scene = SCNScene( named: "/art.scnassets/New/banana.scn")!
+            itemLoaded = scene.rootNode.childNode(withName: "banana", recursively: true)
+            itemLoaded.name = "FOOD_banana"
+            itemLoaded.scale = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
         }
+        //        else if (randomNumber == 10) {
+        //            // Load model
+        //            let scene = SCNScene( named: "/art.scnassets/New/Melon.scn")!
+        //            itemLoaded = scene.rootNode.childNode(withName: "melon", recursively: true)
+        //            itemLoaded.name = "FOOD_melon"
+        //            itemLoaded.scale = SCNVector3(x: 50, y: 50, z: 50)
+        //        }
         
         itemLoaded.position = SCNVector3(x:1, y:-3, z:-10)
         
@@ -72,7 +103,8 @@ struct itemGenerator {
         
         // Randomly choose item to appear
         let numberOfItem = Int(2) // 新增物品時記得改這邊的數字
-        let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
+        //let randomNumber = Int(arc4random_uniform(UInt32(numberOfItem))+1)
+        let randomNumber = 2 // for test use only
         var itemLoaded: SCNNode!
         
         if (randomNumber == 1) {
@@ -126,7 +158,8 @@ struct itemGenerator {
     static func loadCoin() -> SCNNode{
         // Randomly choose a type of coin to appear
         let numberOfCoin = Int(2) // 新增物品時記得改這邊的數字
-        let randomNumber = Int(arc4random_uniform(UInt32(numberOfCoin))+1)
+        //let randomNumber = Int(arc4random_uniform(UInt32(numberOfCoin))+1)
+        let randomNumber = 2
         var coinLoaded: SCNNode!
         
         if (randomNumber == 1) {
@@ -168,3 +201,4 @@ struct itemGenerator {
         return confetti
     }
 }
+

@@ -8,12 +8,31 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: MusicView {
+    
+    @IBOutlet weak var sound_button: UIButton!
+    var timer_duration = 30
+    
+    @IBAction func SoundControl(_ sender: UIButton) {
+        if mute{
+            mute = false
+            super.playMusic()
+            sound_button.isSelected = false
+            music = true
+        }
+        else{
+            super.pauseMusic()
+            music = false
+            mute = true
+            sound_button.isSelected = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        super.playMusic()
         // Do any additional setup after loading the view.
     }
     
@@ -22,14 +41,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.pauseMusic()
+    }
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        if segue.identifier == "game"{
+            let destinationVC = segue.destination as! GameViewController
+            destinationVC.timer_duration = timer_duration
+        }
+        // Pass the selected object to the new view controller.
+    }
     
 }

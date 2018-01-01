@@ -18,7 +18,7 @@ import HealthKitUI
 import CoreMotion
 import SpriteKit
 
-class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate {
+class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
     @IBOutlet weak var score_lbl: UILabel!
     @IBOutlet weak var timer_lbl: UILabel!
     @IBOutlet weak var coins_lbl: UILabel!
@@ -28,6 +28,22 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     @IBOutlet var scnView: ARSCNView!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var sound_button: UIButton!
+    
+    @IBAction func ControlSound(_ sender: Any) {
+        if mute{
+            mute = false
+            super.playMusic()
+            sound_button.isSelected = false
+            music = true
+        }
+        else{
+            super.pauseMusic()
+            music = false
+            mute = true
+            sound_button.isSelected = true
+        }
+    }
     
     let pedometer: CMPedometer = CMPedometer() // An object for fetching the system-generated live walking data.
     
@@ -41,7 +57,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     var coinsCounter: Int = 0
     var ingredientsCollectedCounter: Int = 0
     var globalTimer: GlobalTimer!
-    var timer_duration = 30
+    var timer_duration = 10
     
     // Global boolean to determine user state
     var isExercise: Bool = true
@@ -87,6 +103,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         
         showUI()
         startTimer()
+        super.playMusic()
     }
     
     // Util to easily get frame boundaries
@@ -139,6 +156,47 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             title = "Orange"
             description = "Helps prevent cardiovascular diseases and stomach cancer. Also helps relieve cough!"
         }
+        else if foodNode.name == "FOOD_bread"{
+            title = "Bread"
+            description = "Maybe you can try one-hundred percent whole grain and whole wheat bread next time?"
+        }
+        else if foodNode.name == "FOOD_carrot"{
+            title = "Carrot"
+            description = "Carrots help reduce cholesterol, lower risks of heart attacks, prevent certain cancers, improve vision, and reduce signs of premature aging! It can also boost the immune system and improve digestion!"
+        }
+        else if foodNode.name == "FOOD_pumpkin"{
+            title = "Pumpkin"
+            description = "Eating pumpkin is good for the heart. The fiber, potassium, and vitamin C content in pumpkin all support heart health!"
+        }
+        else if foodNode.name == "FOOD_banana"{
+            title = "Banana"
+            description = "Bananas contain many important nutritions that help moderate blood sugar levels, improve digestive health and support heart health! They also contain powerful antioxidants that can reduce risks of heart disease and degenerative diseases!"
+        }
+            // broken models
+        else if foodNode.name == "FOOD_egg"{
+            title = "Egg"
+            description = "Eat adequate amount of eggs! Eggs are good source of high quality protein!"
+        }
+        else if foodNode.name == "FOOD_melon"{
+            title = "Melon"
+            description = "Melons can help improve your digestive health, heart health, and help prevent lung cancer! It contains lots of B vitamins and is great energy booster! Also, it has anti-aging benefits!"
+        }
+        
+        Popup(parent: self, title: title, content: description, okActionTitle: "Keep Exercising").show()
+    }
+    
+    func printObjInfo(_ objNode: SCNNode){
+        var title = "Unkown object"
+        var description = "This would be an object description!"
+        
+        if objNode.name == "OBJECT_bone"{
+            title = "Bone"
+            description = "Your pet is happy with this bone!"
+        }
+        else if objNode.name == "OBJECT_piggy"{
+            title = "Piggy Bank"
+            description = "A piggy bank brings you extra fortune!"
+        }
         
         Popup(parent: self, title: title, content: description, okActionTitle: "Keep Exercising").show()
     }
@@ -161,7 +219,9 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
         let exp = self.ingredientsCollectedCounter * 100
         // One level every 500 experience points
         let EACH_LEVEL_EXP = 500
-        let level = exp / EACH_LEVEL_EXP
+        var level = 0
+        level = exp / EACH_LEVEL_EXP*(level+1)
+        //it will be harder to go up level each level up.
         //******************************************************
         // Retrieve the current progress
         var currentProgress: Float = Float(exp - level * EACH_LEVEL_EXP)
@@ -275,6 +335,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     // Tell AR session to stop tracking motion and processing image for the view’s content
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        super.pauseMusic()
         scnView.session.pause()
     }
     
@@ -416,6 +477,7 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
                             self.randomAppear()
                         })
                     } else if (resultNode.name)?.range(of:"OBJECT") != nil {
+                        self.printObjInfo(resultNode)
                         createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
                             self.randomAppear()
@@ -426,16 +488,22 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
             else{
                 resultNode.removeFromParentNode()
                 if (resultNode.name)?.range(of:"FOOD") != nil {
+                    playSoundEffect(filename: "points")
                     self.printFoodInfo(resultNode)
                     self.ingredientsCollectedCounter += 1
                     self.updateProgress()
                 } else if resultNode.name == "COIN" {
+                    playSoundEffect(filename: "coin")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.rewardCoin()
                 } else if (resultNode.name)?.range(of:"OBJECT") != nil {
+                    self.printObjInfo(resultNode)
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 } else if resultNode.name == "TROPHY" {
+                    playSoundEffect(filename:"trophy")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
+                    self.performSegue(withIdentifier: "popup", sender: self)
+                    print("hola")
                 }
             }
         }
@@ -490,17 +558,20 @@ class GameViewController: UIViewController, ARSessionDelegate, ARSCNViewDelegate
     
     //send data to stats screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "popup"{
         //******************************************************
         let exp = self.ingredientsCollectedCounter * 100
         let EACH_LEVEL_EXP = 500
         let level = exp / EACH_LEVEL_EXP
         //******************************************************
         // Get the new view controller using segue.destinationViewController.
-        let destination = segue.destination as! StatsViewController
+        let destination = segue.destination as! PUViewController
         destination.level = level
         destination.coins = Int(coins_lbl.text!)!
         destination.points = exp
         // Pass the selected object to the new view controller.
+        destination.mute = mute
+        }
     }
     
 }
