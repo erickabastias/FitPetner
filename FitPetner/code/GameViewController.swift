@@ -33,12 +33,12 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
     @IBAction func ControlSound(_ sender: Any) {
         if mute{
             mute = false
-            backgroundMusicPlayer.play()
+            super.playMusic()
             sound_button.isSelected = false
             music = true
         }
         else{
-            backgroundMusicPlayer.pause()
+            super.pauseMusic()
             music = false
             mute = true
             sound_button.isSelected = true
@@ -103,6 +103,7 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
         
         showUI()
         startTimer()
+        super.playMusic()
     }
     
     // Util to easily get frame boundaries
@@ -293,6 +294,7 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
     // Tell AR session to stop tracking motion and processing image for the view’s content
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        super.pauseMusic()
         scnView.session.pause()
     }
     
