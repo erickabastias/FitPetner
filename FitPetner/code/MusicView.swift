@@ -26,16 +26,26 @@ class MusicView: UIViewController {
 //            print("Could not create audio player: \(error!)")
             return
         }
-        else{
+        else {
+            backgroundMusicPlayer.numberOfLoops = -1
+            backgroundMusicPlayer.prepareToPlay()
+            backgroundMusicPlayer.play()
+            
+            if(!music) {
+                music = true
+            }
+            
             if(mute == false){
-                if(music == false){
-                    backgroundMusicPlayer.numberOfLoops = -1
-                    backgroundMusicPlayer.prepareToPlay()
-                    backgroundMusicPlayer.play()
-                    music = true
-                }
+                
             }
         }
+    }
+    
+    func pauseMusic() {
+        if (backgroundMusicPlayer != nil) {
+            backgroundMusicPlayer.pause()
+        }
+        music = false
     }
     
     func playSoundEffect(filename: String) {

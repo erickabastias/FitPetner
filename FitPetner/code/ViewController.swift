@@ -18,12 +18,12 @@ class ViewController: MusicView {
     @IBAction func SoundControl(_ sender: UIButton) {
         if mute{
             mute = false
-            backgroundMusicPlayer.play()
+            super.playMusic()
             sound_button.isSelected = false
             music = true
         }
         else{
-            backgroundMusicPlayer.pause()
+            super.pauseMusic()
             music = false
             mute = true
             sound_button.isSelected = true
@@ -32,13 +32,17 @@ class ViewController: MusicView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playMusic()
+        super.playMusic()
         // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.pauseMusic()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
