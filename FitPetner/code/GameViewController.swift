@@ -457,7 +457,7 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
                 } else if (resultNode.name)?.range(of:"OBJECT") != nil {
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 } else if resultNode.name == "TROPHY" {
-                    playSoundEffect(filename:"trophy")
+                    playSoundEffect(filename: "trophy")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.performSegue(withIdentifier: "popup", sender: self)
                     print("hola")
