@@ -55,7 +55,7 @@ class MusicView: UIViewController {
             return
         }
         if(!mute){
-            backgroundMusicPlayer.numberOfLoops = 1
+            backgroundMusicPlayer.numberOfLoops = 0
             backgroundMusicPlayer.prepareToPlay()
             backgroundMusicPlayer.play()
         }
