@@ -517,9 +517,8 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "popup"{
         //******************************************************
-        let exp = self.ingredientsCollectedCounter * 100
-        let EACH_LEVEL_EXP = 500
-        let level = exp / EACH_LEVEL_EXP
+        let exp = ingredientsCollectedCounter * 100
+        let level =  exp / 500
         //******************************************************
         // Get the new view controller using segue.destinationViewController.
         let destination = segue.destination as! PUViewController
