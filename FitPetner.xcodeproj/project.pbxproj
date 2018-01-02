@@ -76,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		517D433D1FFB2F5000A0EFF8 /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
+		517D433E1FFB2F5500A0EFF8 /* trophy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = trophy.mp3; sourceTree = "<group>"; };
+		517D433F1FFB2F5900A0EFF8 /* points.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = points.mp3; sourceTree = "<group>"; };
 		969BA0441FDA4E1F00222CE5 /* FitPetner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPetner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		969BA0471FDA4E1F00222CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		969BA04B1FDA4E1F00222CE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +185,9 @@
 		969BA0461FDA4E1F00222CE5 /* FitPetner */ = {
 			isa = PBXGroup;
 			children = (
+				517D433D1FFB2F5000A0EFF8 /* coin.mp3 */,
+				517D433E1FFB2F5500A0EFF8 /* trophy.mp3 */,
+				517D433F1FFB2F5900A0EFF8 /* points.mp3 */,
 				969BA0B41FE2AF2800222CE5 /* code */,
 				A74E89771FFA239E00E9063C /* sound.assets */,
 				A73C374A1FE367D60097FF70 /* art.scnassets */,

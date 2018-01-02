@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -223,7 +223,7 @@
                         <outlet property="coinslbl" destination="BsS-h6-Tvf" id="jMB-jj-seP"/>
                         <outlet property="level_lbl" destination="pIv-V3-GSe" id="Wm2-Ga-6Eu"/>
                         <outlet property="namelbl" destination="joO-i6-hCO" id="63v-TW-qz5"/>
-                        <outlet property="pointslbl" destination="BsS-h6-Tvf" id="M82-fK-lGi"/>
+                        <outlet property="pointslbl" destination="iN2-Jx-1wf" id="AVa-Oh-ngM"/>
                         <outlet property="sound_button" destination="NVZ-xN-r5Z" id="MBw-0o-C72"/>
                     </connections>
                 </viewController>
@@ -496,6 +496,7 @@
         <image name="settings.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="WbU-2I-Rck"/>
         <segue reference="Y8u-k4-cER"/>
         <segue reference="BQj-x0-YIh"/>
     </inferredMetricsTieBreakers>

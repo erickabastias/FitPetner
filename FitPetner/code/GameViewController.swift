@@ -127,6 +127,7 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
     }
     
     // Print food nutrition info
+    // Print food nutrition info
     func printFoodInfo(_ foodNode: SCNNode){
         var title = "Unkown Ingredient"
         var description = "This would be an ingredient description!"
@@ -492,19 +493,19 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
             else{
                 resultNode.removeFromParentNode()
                 if (resultNode.name)?.range(of:"FOOD") != nil {
-                    playSoundEffect(filename: "sound.assets/points.mp3")
+                    playSoundEffect(filename: "points")
                     self.printFoodInfo(resultNode)
                     self.ingredientsCollectedCounter += 1
                     self.updateProgress()
                 } else if resultNode.name == "COIN" {
-                    playSoundEffect(filename: "sound.assets/coin.mp3")
+                    playSoundEffect(filename: "coin")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.rewardCoin()
                 } else if (resultNode.name)?.range(of:"OBJECT") != nil {
                     self.printObjInfo(resultNode)
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                 } else if resultNode.name == "TROPHY" {
-                    playSoundEffect(filename:"sound.assets/trophy.mp3")
+                    playSoundEffect(filename: "trophy")
                     createExplosion(geometry: resultNode.geometry!, position: resultNode.presentation.position, rotation: resultNode.presentation.rotation)
                     self.performSegue(withIdentifier: "popup", sender: self)
                     print("hola")
@@ -564,9 +565,8 @@ class GameViewController: MusicView, ARSessionDelegate, ARSCNViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "popup"{
         //******************************************************
-        let exp = self.ingredientsCollectedCounter * 100
-        let EACH_LEVEL_EXP = 500
-        let level = exp / EACH_LEVEL_EXP
+        let exp = ingredientsCollectedCounter * 100
+        let level =  exp / 500
         //******************************************************
         // Get the new view controller using segue.destinationViewController.
         let destination = segue.destination as! PUViewController
